@@ -10,16 +10,11 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::~MainWindow()
 {
-    delete ui;
 }
 
 void MainWindow::on_pushButton_clicked()
 {
-    // AddRecordForm addRecordForm;
-    // addRecordForm.setModal(true);
-    // addRecordForm.exec();
-    hide();
-    addRecordFormPtr_ = new AddRecordForm(this);
+    addRecordFormPtr_ = std::make_unique<AddRecordForm>(this);
     addRecordFormPtr_->show();
 }
 

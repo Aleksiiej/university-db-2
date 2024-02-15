@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <memory>
 #include "addrecordform.h"
 
 QT_BEGIN_NAMESPACE
@@ -48,7 +49,7 @@ private slots:
     void on_pushButton_14_clicked();
 
 private:
-    Ui::MainWindow *ui;
-    AddRecordForm * addRecordFormPtr_;
+    std::unique_ptr<Ui::MainWindow> ui;
+    std::unique_ptr<AddRecordForm> addRecordFormPtr_;
 };
 #endif // MAINWINDOW_H
