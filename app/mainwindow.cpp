@@ -15,7 +15,12 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-
+    // AddRecordForm addRecordForm;
+    // addRecordForm.setModal(true);
+    // addRecordForm.exec();
+    hide();
+    addRecordFormPtr_ = new AddRecordForm(this);
+    addRecordFormPtr_->show();
 }
 
 

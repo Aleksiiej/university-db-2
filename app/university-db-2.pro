@@ -9,6 +9,7 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    addrecordform.cpp \
     main.cpp \
     mainwindow.cpp \
     Database.cpp \
@@ -21,6 +22,7 @@ SOURCES += \
     Student.cpp
 
 HEADERS += \
+    addrecordform.h \
     mainwindow.h \
     Database.hpp \
     Employee.hpp \
@@ -32,6 +34,7 @@ HEADERS += \
     Student.hpp
 
 FORMS += \
+    addrecordform.ui \
     mainwindow.ui
 
 # Default rules for deployment.

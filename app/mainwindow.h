@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "addrecordform.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -48,5 +49,6 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    AddRecordForm * addRecordFormPtr_;
 };
 #endif // MAINWINDOW_H
