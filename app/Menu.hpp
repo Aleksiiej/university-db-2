@@ -1,9 +1,8 @@
 #pragma once
-#include <iostream>
 #include <memory>
 #include "IDatabase.hpp"
 #include "Database.hpp"
-#include "Person.hpp"
+
 
 class Menu
 {
