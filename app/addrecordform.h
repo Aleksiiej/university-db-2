@@ -15,6 +15,9 @@ public:
     explicit AddRecordForm(QWidget *parent = nullptr);
     ~AddRecordForm();
 
+private slots:
+    void on_pushButton_addrecord_clicked();
+
 private:
     Ui::AddRecordForm *ui;
 };
