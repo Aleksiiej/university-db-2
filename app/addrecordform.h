@@ -4,6 +4,8 @@
 #include <QDialog>
 #include <memory.h>
 
+#include "PESELValidator.hpp"
+
 namespace Ui {
 class AddRecordForm;
 }
@@ -21,6 +23,7 @@ private slots:
 
 private:
     std::unique_ptr<Ui::AddRecordForm> ui;
+    std::unique_ptr<PESELValidator> PESELValidatorPtr_;
 };
 
 #endif // ADDRECORDFORM_H
