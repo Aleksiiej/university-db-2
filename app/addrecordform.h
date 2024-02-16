@@ -2,6 +2,7 @@
 #define ADDRECORDFORM_H
 
 #include <QDialog>
+#include <memory.h>
 
 namespace Ui {
 class AddRecordForm;
@@ -19,7 +20,7 @@ private slots:
     void on_pushButton_addrecord_clicked();
 
 private:
-    Ui::AddRecordForm *ui;
+    std::unique_ptr<Ui::AddRecordForm> ui;
 };
 
 #endif // ADDRECORDFORM_H

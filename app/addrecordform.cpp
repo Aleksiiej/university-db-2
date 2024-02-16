@@ -10,7 +10,7 @@ AddRecordForm::AddRecordForm(QWidget *parent)
 
 AddRecordForm::~AddRecordForm()
 {
-    delete ui;
+
 }
 
 void AddRecordForm::on_pushButton_addrecord_clicked()
