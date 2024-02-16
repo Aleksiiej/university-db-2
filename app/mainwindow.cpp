@@ -21,7 +21,8 @@ void MainWindow::on_pushButton_clicked()
 
 void MainWindow::on_pushButton_2_clicked()
 {
-
+    showAllFormPtr_ = std::make_unique<ShowAllForm>(this);
+    showAllFormPtr_->show();
 }
 
 

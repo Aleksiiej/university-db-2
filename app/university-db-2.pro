@@ -19,7 +19,8 @@ SOURCES += \
     Person.cpp \
     PESELValidator.cpp \
     RecordGenerator.cpp \
-    Student.cpp
+    Student.cpp \
+    showallform.cpp
 
 HEADERS += \
     addrecordform.h \
@@ -31,11 +32,13 @@ HEADERS += \
     Person.hpp \
     PESELValidator.hpp \
     RecordGenerator.hpp \
-    Student.hpp
+    Student.hpp \
+    showallform.h
 
 FORMS += \
     addrecordform.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    showallform.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <memory>
 #include "addrecordform.h"
+#include "showallform.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -51,5 +52,6 @@ private slots:
 private:
     std::unique_ptr<Ui::MainWindow> ui;
     std::unique_ptr<AddRecordForm> addRecordFormPtr_;
+    std::unique_ptr<ShowAllForm> showAllFormPtr_;
 };
 #endif // MAINWINDOW_H
