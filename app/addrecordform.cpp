@@ -38,3 +38,8 @@ void AddRecordForm::on_pushButton_addrecord_clicked()
     qDebug() << "Sex " << sex;
 }
 
+void AddRecordForm::on_pushButton_close_clicked()
+{
+    close();
+}
+

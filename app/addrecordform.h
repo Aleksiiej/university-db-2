@@ -20,6 +20,7 @@ public:
 
 private slots:
     void on_pushButton_addrecord_clicked();
+    void on_pushButton_close_clicked();
 
 private:
     std::unique_ptr<Ui::AddRecordForm> ui;
