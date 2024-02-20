@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <memory>
 #include "addrecordform.h"
+#include "Database.hpp"
 #include "showallform.h"
 
 QT_BEGIN_NAMESPACE
@@ -15,6 +16,7 @@ QT_END_NAMESPACE
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
+    friend class AddRecordForm;
 
 public:
     MainWindow(QWidget *parent = nullptr);
@@ -51,7 +53,8 @@ private slots:
 
 private:
     std::unique_ptr<Ui::MainWindow> ui;
-    std::unique_ptr<AddRecordForm> addRecordFormPtr_;
-    std::unique_ptr<ShowAllForm> showAllFormPtr_;
+    std::unique_ptr<Database> ptrToDatabase_;
+    std::unique_ptr<AddRecordForm> ptrToAddRecordForm_;
+    std::unique_ptr<ShowAllForm> ptrToShowAllForm_;
 };
 #endif // MAINWINDOW_H

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>450</width>
-    <height>395</height>
+    <width>461</width>
+    <height>489</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,7 @@
    <property name="geometry">
     <rect>
      <x>260</x>
-     <y>350</y>
+     <y>430</y>
      <width>175</width>
      <height>27</height>
     </rect>
@@ -45,7 +45,7 @@
      <x>0</x>
      <y>0</y>
      <width>241</width>
-     <height>381</height>
+     <height>461</height>
     </rect>
    </property>
    <property name="title">
@@ -92,7 +92,18 @@
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_position"/>
+       <widget class="QRadioButton" name="radioButton_student">
+        <property name="text">
+         <string>Student</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="radioButton_employee">
+        <property name="text">
+         <string>Employee</string>
+        </property>
+       </widget>
       </item>
       <item>
        <widget class="QLabel" name="label_pesel">
@@ -112,7 +123,18 @@
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_sex"/>
+       <widget class="QRadioButton" name="radioButton_male">
+        <property name="text">
+         <string>Male</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="radioButton_female">
+        <property name="text">
+         <string>Female</string>
+        </property>
+       </widget>
       </item>
      </layout>
     </item>
@@ -122,7 +144,7 @@
    <property name="geometry">
     <rect>
      <x>270</x>
-     <y>290</y>
+     <y>340</y>
      <width>161</width>
      <height>16</height>
     </rect>
@@ -130,6 +152,28 @@
    <property name="text">
     <string>Invalid PESEL - try again</string>
    </property>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>250</y>
+     <width>144</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <item>
+     <widget class="QLabel" name="label_studentEmployeeValue">
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="lineEdit_studentEmployeeValue"/>
+    </item>
+   </layout>
   </widget>
  </widget>
  <resources/>

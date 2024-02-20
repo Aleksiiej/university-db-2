@@ -4,6 +4,7 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
+    , ptrToDatabase_(std::make_unique<Database>())
 {
     ui->setupUi(this);
 }
@@ -14,15 +15,16 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    addRecordFormPtr_ = std::make_unique<AddRecordForm>(this);
-    addRecordFormPtr_->show();
+    ptrToAddRecordForm_ = std::make_unique<AddRecordForm>(this);
+    ptrToAddRecordForm_->setPtrToMainWindow(std::make_shared<MainWindow>(this));
+    ptrToAddRecordForm_->show();
 }
 
 
 void MainWindow::on_pushButton_2_clicked()
 {
-    showAllFormPtr_ = std::make_unique<ShowAllForm>(this);
-    showAllFormPtr_->show();
+    ptrToShowAllForm_ = std::make_unique<ShowAllForm>(this);
+    ptrToShowAllForm_->show();
 }
 
 
