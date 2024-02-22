@@ -4,7 +4,7 @@
 
 AddRecordForm::AddRecordForm(QWidget *parent)
     : QDialog(parent)
-    , ui(new Ui::AddRecordForm)
+    , ui(std::make_unique<Ui::AddRecordForm>())
     , PESELValidatorPtr_(std::make_unique<PESELValidator>())
 {
     ui->setupUi(this);
@@ -14,7 +14,6 @@ AddRecordForm::AddRecordForm(QWidget *parent)
 
 AddRecordForm::~AddRecordForm()
 {
-
 }
 
 void AddRecordForm::setPtrToMainWindow(std::shared_ptr<MainWindow> ptrToMainWindow)

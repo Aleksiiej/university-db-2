@@ -3,12 +3,16 @@
 
 ShowAllForm::ShowAllForm(QWidget *parent)
     : QDialog(parent)
-    , ui(new Ui::ShowAllForm)
+    , ui(std::make_unique<Ui::ShowAllForm>())
 {
     ui->setupUi(this);
 }
 
 ShowAllForm::~ShowAllForm()
 {
-    delete ui;
+}
+
+void ShowAllForm::setPtrToMainWindow(std::shared_ptr<MainWindow> ptrToMainWindow)
+{
+    ptrToMainWindow_ = ptrToMainWindow;
 }

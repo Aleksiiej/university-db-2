@@ -3,7 +3,6 @@
 
 #include <QDialog>
 #include <memory.h>
-#include "Person.hpp"
 #include "PESELValidator.hpp"
 
 class MainWindow;
@@ -30,8 +29,8 @@ private slots:
 
 private:
     std::unique_ptr<Ui::AddRecordForm> ui;
-    std::unique_ptr<PESELValidator> PESELValidatorPtr_;
     std::shared_ptr<MainWindow> ptrToMainWindow_;
+    std::unique_ptr<PESELValidator> PESELValidatorPtr_;
 };
 
 #endif // ADDRECORDFORM_H

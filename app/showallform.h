@@ -3,6 +3,8 @@
 
 #include <QDialog>
 
+class MainWindow;
+
 namespace Ui {
 class ShowAllForm;
 }
@@ -15,8 +17,11 @@ public:
     explicit ShowAllForm(QWidget *parent = nullptr);
     ~ShowAllForm();
 
+    void setPtrToMainWindow(std::shared_ptr<MainWindow> ptrToMainWindow);
+
 private:
-    Ui::ShowAllForm *ui;
+    std::unique_ptr<Ui::ShowAllForm> ui;
+    std::shared_ptr<MainWindow> ptrToMainWindow_;
 };
 
 #endif // SHOWALLFORM_H
