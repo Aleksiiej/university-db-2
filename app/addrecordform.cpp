@@ -9,6 +9,7 @@ AddRecordForm::AddRecordForm(QWidget *parent)
 {
     ui->setupUi(this);
     ui->label_invalidpesel->setHidden(true);
+    ui->label_studentEmployeeValue->setHidden(true);
 }
 
 AddRecordForm::~AddRecordForm()
@@ -34,20 +35,14 @@ void AddRecordForm::on_pushButton_addrecord_clicked()
     {
         sex = Sex::male;
     }
-    else if(ui->radioButton_female->isChecked())
-    {
-        sex = Sex::female;
-    }
+    else sex = Sex::female;
 
     Position position;
     if(ui->radioButton_student->isChecked())
     {
         position = Position::Student;
     }
-    else if(ui->radioButton_employee->isChecked())
-    {
-        position = Position::Employee;
-    }
+    else position = Position::Employee;
 
     if(PESELValidatorPtr_->validatePESEL(pesel.toStdString()))
     {
@@ -58,9 +53,10 @@ void AddRecordForm::on_pushButton_addrecord_clicked()
     qDebug() << "Name " << name;
     qDebug() << "Surname " << surname;
     qDebug() << "Address " << address;
+    qDebug() << "Position" << static_cast<int>(position);
     qDebug() << "StudentEmployeeValue " << studentEmployeeValue;
     qDebug() << "PESEL " << pesel;
-    // qDebug() << "Sex " << sex;
+    qDebug() << "Sex " << static_cast<int>(sex);
 
     ptrToMainWindow_->ptrToDatabase_->addEmployee(name.toStdString(),
                                                   surname.toStdString(),
@@ -79,10 +75,12 @@ void AddRecordForm::on_pushButton_close_clicked()
 void AddRecordForm::on_radioButton_student_clicked()
 {
     ui->label_studentEmployeeValue->setText("Index");
+    ui->label_studentEmployeeValue->show();
 }
 
 void AddRecordForm::on_radioButton_employee_clicked()
 {
     ui->label_studentEmployeeValue->setText("Salary");
+    ui->label_studentEmployeeValue->show();
 }
 
