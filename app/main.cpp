@@ -9,8 +9,9 @@
 // }
 
 int main(int argc, char *argv[])
-{   std::shared_ptr<Database> ptrToDatabase = std::make_shared<Database>();
+{
     QApplication a(argc, argv);
+    std::shared_ptr<Database> ptrToDatabase = std::make_shared<Database>();
     MainWindow w{ptrToDatabase};
     w.show();
 
