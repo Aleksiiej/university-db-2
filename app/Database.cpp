@@ -43,7 +43,27 @@ std::string Database::returnRecordsAsString()
     std::stringstream sstream;
     for(const auto& el : database_)
     {
-        sstream << el->getName() << std::endl;
+        sstream << "Name: " << el->getName() << std::endl;
+        sstream << "Surname: " << el->getSurname() << std::endl;
+        if(static_cast<bool>(el->getSex()))
+        {
+            sstream << "Sex: female" << std::endl;
+        }
+        else
+        {
+            sstream << "Sex: male" << std::endl;
+        }
+        sstream << "Address: " << el->getAdress() << std::endl;
+        if(static_cast<bool>(el->getPosition()))
+        {
+            sstream << "Position: Employee" << std::endl;
+            sstream << "Salary: " << el->getSalary() << std::endl;
+        }
+        else
+        {
+            sstream << "Position: Student" << std::endl;
+            sstream << "Index: " << el->getIndex() << std::endl;
+        }
     }
     return sstream.str();
 }

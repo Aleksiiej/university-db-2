@@ -17,6 +17,7 @@ public:
     explicit ShowAllForm(QWidget *parent = nullptr);
     ~ShowAllForm();
 
+    void appendTextToLabel(const QString& text);
     void setPtrToMainWindow(MainWindow* ptrToMainWindow);
 
 private slots:
