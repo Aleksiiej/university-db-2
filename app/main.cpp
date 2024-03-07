@@ -3,11 +3,6 @@
 
 #include <QApplication>
 
-// void startapp()
-// {
-
-// }
-
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);

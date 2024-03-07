@@ -20,7 +20,7 @@ void ShowAllForm::setPtrToMainWindow(MainWindow* ptrToMainWindow)
 
 void ShowAllForm::on_pushButton_clicked()
 {
-    std::string records = ptrToMainWindow_->ptrToDatabase_->returnRecordsAsString();
+    std::string records = ptrToMainWindow_->getPtrToDatabase()->returnRecordsAsString();
 }
 
 void ShowAllForm::on_pushButton_2_clicked()

@@ -16,12 +16,12 @@ QT_END_NAMESPACE
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
-    friend class AddRecordForm;
-    friend class ShowAllForm;
 
 public:
     MainWindow(std::shared_ptr<Database> ptrToDatabase, QWidget *parent = nullptr);
     ~MainWindow();
+
+    std::shared_ptr<Database> getPtrToDatabase();
 
 private slots:
     void on_pushButton_clicked();

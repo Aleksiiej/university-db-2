@@ -13,6 +13,11 @@ MainWindow::~MainWindow()
 {
 }
 
+std::shared_ptr<Database> MainWindow::getPtrToDatabase()
+{
+    return ptrToDatabase_;
+}
+
 void MainWindow::on_pushButton_clicked()
 {
     ptrToAddRecordForm_ = std::make_unique<AddRecordForm>(this);

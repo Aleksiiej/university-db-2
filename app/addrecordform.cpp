@@ -59,7 +59,7 @@ void AddRecordForm::on_pushButton_addrecord_clicked()
 
     if(position == Position::Student)
     {
-        ptrToMainWindow_->ptrToDatabase_->addStudent(name.toStdString(),
+        ptrToMainWindow_->getPtrToDatabase()->addStudent(name.toStdString(),
                                                       surname.toStdString(),
                                                       address.toStdString(),
                                                       studentEmployeeValue.toFloat(),
@@ -69,7 +69,7 @@ void AddRecordForm::on_pushButton_addrecord_clicked()
     }
     else
     {
-        ptrToMainWindow_->ptrToDatabase_->addEmployee(name.toStdString(),
+        ptrToMainWindow_->getPtrToDatabase()->addEmployee(name.toStdString(),
                                                       surname.toStdString(),
                                                       address.toStdString(),
                                                       studentEmployeeValue.toFloat(),

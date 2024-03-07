@@ -14,8 +14,6 @@
 
 class Database : public IDatabase
 {
-    friend class AddRecordForm;
-    friend class ShowAllForm;
 public:
     void addStudent(const std::string &name, const std::string &surname, const std::string &adress, const int &index, const std::string &PESEL, const Sex &sex, const Position &position) noexcept;
     void addEmployee(const std::string &name, const std::string &surname, const std::string &adress, const float &salary, const std::string &PESEL, const Sex &sex, const Position &position) noexcept;
