@@ -17,11 +17,15 @@ public:
     explicit ShowAllForm(QWidget *parent = nullptr);
     ~ShowAllForm();
 
-    void setPtrToMainWindow(std::shared_ptr<MainWindow> ptrToMainWindow);
+    void setPtrToMainWindow(MainWindow* ptrToMainWindow);
+
+private slots:
+    void on_pushButton_clicked();
+    void on_pushButton_2_clicked();
 
 private:
     std::unique_ptr<Ui::ShowAllForm> ui;
-    std::shared_ptr<MainWindow> ptrToMainWindow_;
+    MainWindow* ptrToMainWindow_;
 };
 
 #endif // SHOWALLFORM_H

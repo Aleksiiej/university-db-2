@@ -17,9 +17,10 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
     friend class AddRecordForm;
+    friend class ShowAllForm;
 
 public:
-    MainWindow(QWidget *parent = nullptr);
+    MainWindow(std::shared_ptr<Database> ptrToDatabase, QWidget *parent = nullptr);
     ~MainWindow();
 
 private slots:
@@ -53,7 +54,7 @@ private slots:
 
 private:
     std::unique_ptr<Ui::MainWindow> ui;
-    std::unique_ptr<Database> ptrToDatabase_;
+    std::shared_ptr<Database> ptrToDatabase_;
     std::unique_ptr<AddRecordForm> ptrToAddRecordForm_;
     std::unique_ptr<ShowAllForm> ptrToShowAllForm_;
 };

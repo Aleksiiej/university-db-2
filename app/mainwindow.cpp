@@ -1,10 +1,10 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-MainWindow::MainWindow(QWidget *parent)
+MainWindow::MainWindow(std::shared_ptr<Database> ptrToDatabase, QWidget *parent)
     : QMainWindow(parent)
     , ui(std::make_unique<Ui::MainWindow>())
-    , ptrToDatabase_(std::make_unique<Database>())
+    , ptrToDatabase_(ptrToDatabase)
 {
     ui->setupUi(this);
 }
@@ -16,7 +16,7 @@ MainWindow::~MainWindow()
 void MainWindow::on_pushButton_clicked()
 {
     ptrToAddRecordForm_ = std::make_unique<AddRecordForm>(this);
-    ptrToAddRecordForm_->setPtrToMainWindow(std::make_shared<MainWindow>(this));
+    ptrToAddRecordForm_->setPtrToMainWindow(this);
     ptrToAddRecordForm_->show();
 }
 
@@ -24,7 +24,7 @@ void MainWindow::on_pushButton_clicked()
 void MainWindow::on_pushButton_2_clicked()
 {
     ptrToShowAllForm_ = std::make_unique<ShowAllForm>(this);
-    ptrToShowAllForm_->setPtrToMainWindow(std::make_shared<MainWindow>(this));
+    ptrToShowAllForm_->setPtrToMainWindow(this);
     ptrToShowAllForm_->show();
 }
 

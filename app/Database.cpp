@@ -38,6 +38,16 @@ void Database::printByPtr(const std::shared_ptr<Person> ptr) const noexcept
     std::cout << "===================================" << std::endl;
 }
 
+std::string Database::returnRecordsAsString()
+{
+    std::stringstream sstream;
+    for(const auto& el : database_)
+    {
+        sstream << el->getName() << std::endl;
+    }
+    return sstream.str();
+}
+
 void Database::showBySurname(const std::string &surname) const noexcept
 {
     system("clear");

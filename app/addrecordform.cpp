@@ -16,7 +16,7 @@ AddRecordForm::~AddRecordForm()
 {
 }
 
-void AddRecordForm::setPtrToMainWindow(std::shared_ptr<MainWindow> ptrToMainWindow)
+void AddRecordForm::setPtrToMainWindow(MainWindow* ptrToMainWindow)
 {
     ptrToMainWindow_ = ptrToMainWindow;
 }
@@ -57,13 +57,26 @@ void AddRecordForm::on_pushButton_addrecord_clicked()
     qDebug() << "PESEL " << pesel;
     qDebug() << "Sex " << static_cast<int>(sex);
 
-    ptrToMainWindow_->ptrToDatabase_->addEmployee(name.toStdString(),
-                                                  surname.toStdString(),
-                                                  address.toStdString(),
-                                                  studentEmployeeValue.toFloat(),
-                                                  pesel.toStdString(),
-                                                  sex,
-                                                  position);
+    if(position == Position::Student)
+    {
+        ptrToMainWindow_->ptrToDatabase_->addStudent(name.toStdString(),
+                                                      surname.toStdString(),
+                                                      address.toStdString(),
+                                                      studentEmployeeValue.toFloat(),
+                                                      pesel.toStdString(),
+                                                      sex,
+                                                      position);
+    }
+    else
+    {
+        ptrToMainWindow_->ptrToDatabase_->addEmployee(name.toStdString(),
+                                                      surname.toStdString(),
+                                                      address.toStdString(),
+                                                      studentEmployeeValue.toFloat(),
+                                                      pesel.toStdString(),
+                                                      sex,
+                                                      position);
+    }
 }
 
 void AddRecordForm::on_pushButton_close_clicked()
