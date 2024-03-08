@@ -1,6 +1,6 @@
 #pragma once
 #include "gmock/gmock.h"
-#include "../IDatabase.hpp"
+#include "IDatabase.hpp"
 
 class DatabaseMock : public IDatabase
 {

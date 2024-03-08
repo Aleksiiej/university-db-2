@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "../PESELValidator.hpp"
+#include "PESELValidator.hpp"
 
 TEST(PESELValidatorTests, validatePESELTest)
 {

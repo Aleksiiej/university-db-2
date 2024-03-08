@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
-#include "../Database.hpp"
-#include "../Person.hpp"
-#include "../Student.hpp"
+#include "Database.hpp"
+#include "Person.hpp"
+#include "Student.hpp"
 
 class DatabaseFixture : public ::testing::Test
 {

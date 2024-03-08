@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 #include "DatabaseMock.hpp"
-#include "../Menu.hpp"
+#include "Menu.hpp"
 
 class MenuFixture : public ::testing::Test
 {

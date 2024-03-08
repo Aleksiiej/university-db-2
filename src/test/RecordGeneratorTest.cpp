@@ -1,11 +1,11 @@
 #include <gtest/gtest.h>
 #include <memory>
-#include "../RecordGenerator.hpp"
+#include "RecordGenerator.hpp"
 
 TEST(RecordGeneratorTests, generateRandomRecordTest)
 {
     RecordGenerator rg;
-    std::unique_ptr<Person> record = std::move(rg.generateRandomRecord());
+    std::unique_ptr<Person> record = rg.generateRandomRecord();
     EXPECT_LT(0, (record->getName()).size());
     EXPECT_LT(0, (record->getSurname()).size());
     EXPECT_LT(0, (record->getAdress()).size());
