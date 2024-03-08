@@ -4,10 +4,10 @@ set(TESTS DatabaseTest.cpp
           RecordGeneratorTest.cpp
           ../app/Database.cpp
           ../app/Employee.cpp
-            ../app/Person.cpp
+          ../app/Person.cpp
+          ../app/PESELValidator.cpp
           ../app/RecordGenerator.cpp
-            ../app/Student.cpp
-            ../app/PESELValidator.cpp)
+          ../app/Student.cpp)
 
 add_executable(${PROJECT_NAME}-ut ${TESTS})
 
