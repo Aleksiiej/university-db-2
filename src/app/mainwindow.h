@@ -18,7 +18,9 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    MainWindow(std::shared_ptr<Database> ptrToDatabase, QWidget *parent = nullptr);
+    MainWindow(std::shared_ptr<Database> ptrToDatabase,
+               std::shared_ptr<RecordGenerator> ptrToRGenerator,
+               QWidget *parent = nullptr);
     ~MainWindow();
 
     std::shared_ptr<Database> getPtrToDatabase();
@@ -55,6 +57,7 @@ private slots:
 private:
     std::unique_ptr<Ui::MainWindow> ui;
     std::shared_ptr<Database> ptrToDatabase_;
+    std::shared_ptr<RecordGenerator> ptrToRGenerator_;
     std::unique_ptr<AddRecordForm> ptrToAddRecordForm_;
     std::unique_ptr<ShowAllForm> ptrToShowAllForm_;
 };

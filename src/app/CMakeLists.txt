@@ -23,7 +23,8 @@ qt_add_executable(${PROJECT_NAME} main.cpp
                                   showallform.cpp
                                   showallform.ui
                                   Student.hpp
-                                  Student.cpp)
+                                  Student.cpp
+                                  recordgeneratorform.h recordgeneratorform.cpp recordgeneratorform.ui)
 
 target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Widgets)
 target_compile_options(${PROJECT_NAME} PRIVATE -Werror -Wall -Wextra -pedantic)
