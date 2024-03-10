@@ -6,13 +6,13 @@ qt_add_executable(${PROJECT_NAME} main.cpp
                                   addrecordform.cpp
                                   addrecordform.ui
                                   Database.hpp
-                                  Database.cpp 
+                                  Database.cpp
                                   Employee.hpp
-                                  Employee.cpp 
+                                  Employee.cpp
                                   IDatabase.hpp
                                   IDatabase.cpp
-                                  Menu.hpp
-                                  Menu.cpp
+
+
                                   Person.hpp
                                   Person.cpp
                                   PESELValidator.hpp
