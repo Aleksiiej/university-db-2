@@ -1,11 +1,9 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-MainWindow::MainWindow(std::shared_ptr<Database> ptrToDatabase,
-                       std::shared_ptr<RecordGenerator> ptrToRGenerator,
-                       QWidget *parent)
+MainWindow::MainWindow(std::shared_ptr<Database> ptrToDatabase, QWidget *parent)
     : QMainWindow(parent), ui(std::make_unique<Ui::MainWindow>()),
-      ptrToDatabase_(ptrToDatabase), ptrToRGenerator_(ptrToRGenerator) {
+      ptrToDatabase_(ptrToDatabase) {
   ui->setupUi(this);
 }
 

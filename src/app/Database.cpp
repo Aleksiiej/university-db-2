@@ -255,7 +255,7 @@ void Database::saveToFile(const std::string &fileName) noexcept {
 void Database::generateData(const int &n) noexcept {
   auto tempGenerator = std::make_unique<RecordGenerator>();
   for (int i = 0; i < n; i++) {
-    database_.push_back(std::move(tempGenerator->generateRandomRecord()));
+    database_.push_back(tempGenerator->generateRandomRecord());
   }
 }
 

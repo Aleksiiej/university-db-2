@@ -20,7 +20,6 @@ class MainWindow : public QMainWindow {
 
 public:
   MainWindow(std::shared_ptr<Database> ptrToDatabase,
-             std::shared_ptr<RecordGenerator> ptrToRGenerator,
              QWidget *parent = nullptr);
   ~MainWindow();
 
