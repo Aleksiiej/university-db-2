@@ -7,16 +7,15 @@ namespace Ui {
 class recordgeneratorform;
 }
 
-class recordgeneratorform : public QDialog
-{
-    Q_OBJECT
+class recordgeneratorform : public QDialog {
+  Q_OBJECT
 
 public:
-    explicit recordgeneratorform(QWidget *parent = nullptr);
-    ~recordgeneratorform();
+  explicit recordgeneratorform(QWidget *parent = nullptr);
+  ~recordgeneratorform();
 
 private:
-    Ui::recordgeneratorform *ui;
+  Ui::recordgeneratorform *ui;
 };
 
 #endif // RECORDGENERATORFORM_H
