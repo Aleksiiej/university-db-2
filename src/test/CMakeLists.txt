@@ -1,5 +1,5 @@
 set(TESTS DatabaseTest.cpp
-          MenuTest.cpp
+
           PESELValidatorTest.cpp
           RecordGeneratorTest.cpp
           ../app/Database.cpp
