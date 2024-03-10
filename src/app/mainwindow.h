@@ -3,7 +3,9 @@
 
 #include "Database.hpp"
 #include "addrecordform.h"
+#include "recordgeneratorform.h"
 #include "showallform.h"
+
 #include <QMainWindow>
 #include <memory>
 
@@ -59,5 +61,6 @@ private:
   std::shared_ptr<RecordGenerator> ptrToRGenerator_;
   std::unique_ptr<AddRecordForm> ptrToAddRecordForm_;
   std::unique_ptr<ShowAllForm> ptrToShowAllForm_;
+  std::unique_ptr<RecordGeneratorForm> ptrToRGeneratorForm_;
 };
 #endif // MAINWINDOW_H

@@ -11,8 +11,6 @@ qt_add_executable(${PROJECT_NAME} main.cpp
                                   Employee.cpp
                                   IDatabase.hpp
                                   IDatabase.cpp
-
-
                                   Person.hpp
                                   Person.cpp
                                   PESELValidator.hpp
@@ -24,7 +22,8 @@ qt_add_executable(${PROJECT_NAME} main.cpp
                                   showallform.ui
                                   Student.hpp
                                   Student.cpp
-                                  recordgeneratorform.h recordgeneratorform.cpp recordgeneratorform.ui)
+                                  recordgeneratorform.h recordgeneratorform.cpp recordgeneratorform.ui
+                              )
 
 target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Widgets)
 target_compile_options(${PROJECT_NAME} PRIVATE -Werror -Wall -Wextra -pedantic)

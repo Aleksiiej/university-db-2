@@ -47,6 +47,10 @@ void MainWindow::on_pushButton_11_clicked() {}
 
 void MainWindow::on_pushButton_12_clicked() {}
 
-void MainWindow::on_pushButton_13_clicked() {}
+void MainWindow::on_pushButton_13_clicked() {
+  ptrToRGeneratorForm_ = std::make_unique<RecordGeneratorForm>();
+  ptrToRGeneratorForm_->setPtrToMainWindow(this);
+  ptrToRGeneratorForm_->show();
+}
 
 void MainWindow::on_pushButton_14_clicked() { std::exit(0); }

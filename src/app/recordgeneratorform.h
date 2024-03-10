@@ -3,19 +3,28 @@
 
 #include <QDialog>
 
+class MainWindow;
+
 namespace Ui {
-class recordgeneratorform;
+class RecordGeneratorForm;
 }
 
-class recordgeneratorform : public QDialog {
+class RecordGeneratorForm : public QDialog {
   Q_OBJECT
 
 public:
-  explicit recordgeneratorform(QWidget *parent = nullptr);
-  ~recordgeneratorform();
+  explicit RecordGeneratorForm(QWidget *parent = nullptr);
+  ~RecordGeneratorForm();
+
+  void setPtrToMainWindow(MainWindow *ptrToMainWindow);
+
+private slots:
+  void on_generate_records_pushButton_clicked();
+  void on_close_pushButton_2_clicked();
 
 private:
-  Ui::recordgeneratorform *ui;
+  std::unique_ptr<Ui::RecordGeneratorForm> ui;
+  MainWindow *ptrToMainWindow_;
 };
 
 #endif // RECORDGENERATORFORM_H
