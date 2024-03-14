@@ -17,7 +17,7 @@ public:
   ~ShowAllForm();
 
   void appendTextToLabel(const QString &text);
-  void setPtrToMainWindow(MainWindow *ptrToMainWindow);
+  void setPtrToMainWindow(std::shared_ptr<MainWindow> ptrToMainWindow);
 
 private slots:
   void on_pushButton_clicked();
@@ -25,7 +25,7 @@ private slots:
 
 private:
   std::unique_ptr<Ui::ShowAllForm> ui;
-  MainWindow *ptrToMainWindow_;
+  std::shared_ptr<MainWindow> ptrToMainWindow_;
 };
 
 #endif // SHOWALLFORM_H

@@ -18,7 +18,7 @@ public:
   explicit AddRecordForm(QWidget *parent = nullptr);
   ~AddRecordForm();
 
-  void setPtrToMainWindow(MainWindow *ptrToMainWindow);
+  void setPtrToMainWindow(std::shared_ptr<MainWindow> ptrToMainWindow);
 
 private slots:
   void on_pushButton_addrecord_clicked();
@@ -28,7 +28,7 @@ private slots:
 
 private:
   std::unique_ptr<Ui::AddRecordForm> ui;
-  MainWindow *ptrToMainWindow_;
+  std::shared_ptr<MainWindow> ptrToMainWindow_;
   std::unique_ptr<PESELValidator> PESELValidatorPtr_;
 };
 
