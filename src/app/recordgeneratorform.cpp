@@ -19,7 +19,6 @@ void RecordGeneratorForm::on_generate_records_pushButton_clicked() {
   // QString number = ui->lineEdit->text();
 
   int number = std::stoi(ui->lineEdit->text().toStdString());
-  std::cout << number << std::endl;
   ptrToMainWindow_->getPtrToDatabase()->generateData(number);
 }
 

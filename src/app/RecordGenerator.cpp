@@ -43,7 +43,7 @@ std::unique_ptr<Person> RecordGenerator::generateRandomRecord() const noexcept {
 }
 
 std::string RecordGenerator::generateRandomMaleName() const noexcept {
-  std::fstream file("../RandomData/maleNames.txt", std::ios::in);
+  std::fstream file("../src/content/maleNames.txt", std::ios::in);
   if (!file) {
     std::cout << "File was not opened properly \n Program will be closed"
               << std::endl;
@@ -62,7 +62,7 @@ std::string RecordGenerator::generateRandomMaleName() const noexcept {
 }
 
 std::string RecordGenerator::generateRandomFemaleName() const noexcept {
-  std::fstream file("../RandomData/femaleNames.txt", std::ios::in);
+  std::fstream file("../src/content/femaleNames.txt", std::ios::in);
   if (!file) {
     std::cout << "File was not opened properly \n Program will be closed"
               << std::endl;
@@ -80,7 +80,7 @@ std::string RecordGenerator::generateRandomFemaleName() const noexcept {
 }
 
 std::string RecordGenerator::generateRandomMaleSurname() const noexcept {
-  std::fstream file("../RandomData/maleSurnames.txt", std::ios::in);
+  std::fstream file("../src/content/maleSurnames.txt", std::ios::in);
   if (!file) {
     std::cout << "File was not opened properly \n Program will be closed"
               << std::endl;
@@ -98,7 +98,7 @@ std::string RecordGenerator::generateRandomMaleSurname() const noexcept {
 }
 
 std::string RecordGenerator::generateRandomFemaleSurname() const noexcept {
-  std::fstream file("../RandomData/femaleSurnames.txt", std::ios::in);
+  std::fstream file("../src/content/femaleSurnames.txt", std::ios::in);
   if (!file) {
     std::cout << "File was not opened properly \n Program will be closed"
               << std::endl;
@@ -116,7 +116,7 @@ std::string RecordGenerator::generateRandomFemaleSurname() const noexcept {
 }
 
 std::string RecordGenerator::generateRandomAdress() const noexcept {
-  std::fstream file("../RandomData/adresses.txt", std::ios::in);
+  std::fstream file("../src/content/adresses.txt", std::ios::in);
   if (!file) {
     std::cout << "File was not opened properly \n Program will be closed"
               << std::endl;

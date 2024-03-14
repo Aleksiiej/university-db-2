@@ -60,6 +60,7 @@ std::string Database::returnRecordsAsString() {
     } else {
       sstream << "Position: Student" << std::endl;
       sstream << "Index: " << el->getIndex() << std::endl;
+      sstream << std::endl;
     }
   }
   return sstream.str();
