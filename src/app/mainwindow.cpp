@@ -15,13 +15,13 @@ std::shared_ptr<Database> MainWindow::getPtrToDatabase() {
 
 void MainWindow::on_pushButton_clicked() {
   ptrToAddRecordForm_ = std::make_unique<AddRecordForm>(this);
-  ptrToAddRecordForm_->setPtrToMainWindow(shared_from_this());
+  ptrToAddRecordForm_->setPtrToMainWindow(this);
   ptrToAddRecordForm_->show();
 }
 
 void MainWindow::on_pushButton_2_clicked() {
   ptrToShowAllForm_ = std::make_unique<ShowAllForm>(this);
-  ptrToShowAllForm_->setPtrToMainWindow(shared_from_this());
+  ptrToShowAllForm_->setPtrToMainWindow(this);
   ptrToShowAllForm_->show();
 }
 

@@ -15,8 +15,7 @@ class MainWindow;
 }
 QT_END_NAMESPACE
 
-class MainWindow : public QMainWindow,
-                   std::enable_shared_from_this<MainWindow> {
+class MainWindow : public QMainWindow {
   Q_OBJECT
 
 public:

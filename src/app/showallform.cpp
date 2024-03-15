@@ -16,8 +16,7 @@ void ShowAllForm::appendTextToLabel(const QString &text) {
   ui->label->setText(temp);
 }
 
-void ShowAllForm::setPtrToMainWindow(
-    std::shared_ptr<MainWindow> ptrToMainWindow) {
+void ShowAllForm::setPtrToMainWindow(MainWindow *ptrToMainWindow) {
   ptrToMainWindow_ = ptrToMainWindow;
 }
 

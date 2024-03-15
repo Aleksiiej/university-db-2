@@ -12,8 +12,7 @@ AddRecordForm::AddRecordForm(QWidget *parent)
 
 AddRecordForm::~AddRecordForm() {}
 
-void AddRecordForm::setPtrToMainWindow(
-    std::shared_ptr<MainWindow> ptrToMainWindow) {
+void AddRecordForm::setPtrToMainWindow(MainWindow *ptrToMainWindow) {
   ptrToMainWindow_ = ptrToMainWindow;
 }
 
