@@ -43,94 +43,78 @@ std::unique_ptr<Person> RecordGenerator::generateRandomRecord() const noexcept {
 }
 
 std::string RecordGenerator::generateRandomMaleName() const noexcept {
-  std::ifstream file("../src/content/maleNames.txt", std::ios::in);
+  std::ifstream file("../src/content/maleNames.json");
   if (!file) {
     std::cout << "File was not opened properly \n Program will be closed"
               << std::endl;
     exit(0);
   }
-
-  std::string tempName;
+  nlohmann::json data;
+  file >> data;
   std::random_device rd;
   std::mt19937 rng(rd());
-  std::uniform_int_distribution<> distrib(0, 99);
-
-  for (int i = 0; i < distrib(rng); i++) {
-    file >> tempName;
-  }
-  return tempName;
+  std::uniform_int_distribution<> distrib(0, data.size() - 1);
+  return data.at(distrib(rng));
 }
 
 std::string RecordGenerator::generateRandomFemaleName() const noexcept {
-  std::ifstream file("../src/content/femaleNames.txt", std::ios::in);
+  std::ifstream file("../src/content/femaleNames.json");
   if (!file) {
     std::cout << "File was not opened properly \n Program will be closed"
               << std::endl;
     exit(0);
   }
-  std::string tempName;
+  nlohmann::json data;
+  file >> data;
   std::random_device rd;
   std::mt19937 rng(rd());
-  std::uniform_int_distribution<> distrib(0, 99);
-
-  for (int i = 0; i < distrib(rng); i++) {
-    file >> tempName;
-  }
-  return tempName;
+  std::uniform_int_distribution<> distrib(0, data.size() - 1);
+  return data.at(distrib(rng));
 }
 
 std::string RecordGenerator::generateRandomMaleSurname() const noexcept {
-  std::ifstream file("../src/content/maleSurnames.txt", std::ios::in);
+  std::ifstream file("../src/content/maleSurnames.json");
   if (!file) {
     std::cout << "File was not opened properly \n Program will be closed"
               << std::endl;
     exit(0);
   }
-  std::string tempSurname;
+  nlohmann::json data;
+  file >> data;
   std::random_device rd;
   std::mt19937 rng(rd());
-  std::uniform_int_distribution<> distrib(0, 99);
-
-  for (int i = 0; i < distrib(rng); i++) {
-    file >> tempSurname;
-  }
-  return tempSurname;
+  std::uniform_int_distribution<> distrib(0, data.size() - 1);
+  return data.at(distrib(rng));
 }
 
 std::string RecordGenerator::generateRandomFemaleSurname() const noexcept {
-  std::ifstream file("../src/content/femaleSurnames.txt", std::ios::in);
+  std::ifstream file("../src/content/femaleSurnames.json");
   if (!file) {
     std::cout << "File was not opened properly \n Program will be closed"
               << std::endl;
     exit(0);
   }
-  std::string tempSurname;
+  nlohmann::json data;
+  file >> data;
   std::random_device rd;
   std::mt19937 rng(rd());
-  std::uniform_int_distribution<> distrib(0, 99);
-
-  for (int i = 0; i < distrib(rng); i++) {
-    file >> tempSurname;
-  }
-  return tempSurname;
+  std::uniform_int_distribution<> distrib(0, data.size() - 1);
+  return data.at(distrib(rng));
 }
 
 std::string RecordGenerator::generateRandomAdress() const noexcept {
-  std::ifstream file("../src/content/adresses.txt", std::ios::in);
+  std::ifstream file("../src/content/adresses.json");
   if (!file) {
     std::cout << "File was not opened properly \n Program will be closed"
               << std::endl;
     exit(0);
   }
-  std::string tempAdress;
+  nlohmann::json data;
+  file >> data;
   std::random_device rd;
   std::mt19937 rng(rd());
-  std::uniform_int_distribution<> distrib(0, 99);
-
-  for (int i = 0; i < distrib(rng); i++) {
-    std::getline(file, tempAdress);
-  }
-  return tempAdress;
+  std::uniform_int_distribution<> distrib(0, data.size() - 1);
+  return data.at(distrib(rng));
 }
 
 int RecordGenerator::generateRandomIndex() const noexcept {
