@@ -2,9 +2,7 @@
 #include "Employee.hpp"
 #include "Student.hpp"
 #include "json.hpp"
-#include <algorithm>
 #include <fstream>
-#include <iostream>
 #include <random>
 
 constexpr int minIndex = 20000;

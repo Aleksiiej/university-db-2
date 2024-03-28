@@ -1,16 +1,7 @@
 #pragma once
-#include "Employee.hpp"
 #include "IDatabase.hpp"
 #include "PESELValidator.hpp"
-#include "Person.hpp"
 #include "RecordGenerator.hpp"
-#include "Student.hpp"
-#include <fstream>
-#include <iomanip>
-#include <iostream>
-#include <memory>
-#include <string>
-#include <vector>
 
 class Database : public IDatabase {
 public:

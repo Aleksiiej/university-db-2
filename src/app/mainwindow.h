@@ -7,7 +7,6 @@
 #include "showallform.h"
 
 #include <QMainWindow>
-#include <memory>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {

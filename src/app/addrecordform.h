@@ -3,7 +3,6 @@
 
 #include "PESELValidator.hpp"
 #include <QDialog>
-#include <memory.h>
 
 class MainWindow;
 
