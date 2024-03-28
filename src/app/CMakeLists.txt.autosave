@@ -19,7 +19,6 @@ qt_add_executable(${PROJECT_NAME} main.cpp
                                   RecordGenerator.cpp
                                   Student.hpp
                                   Student.cpp
-                                  json.hpp
                                   addrecordform.h addrecordform.cpp addrecordform.ui
                                   recordgeneratorform.h recordgeneratorform.cpp recordgeneratorform.ui
                                   showallform.h showallform.cpp showallform.ui

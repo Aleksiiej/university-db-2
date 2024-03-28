@@ -57,6 +57,7 @@ std::string Database::returnRecordsAsString() {
     if (static_cast<bool>(el->getPosition())) {
       sstream << "Position: Employee" << std::endl;
       sstream << "Salary: " << el->getSalary() << std::endl;
+      sstream << std::endl;
     } else {
       sstream << "Position: Student" << std::endl;
       sstream << "Index: " << el->getIndex() << std::endl;
