@@ -1,6 +1,7 @@
 #ifndef RECORDGENERATORFORM_H
 #define RECORDGENERATORFORM_H
 
+#include "informationform.h"
 #include <QDialog>
 
 class MainWindow;
@@ -25,6 +26,7 @@ private slots:
 private:
   std::unique_ptr<Ui::RecordGeneratorForm> ui;
   MainWindow *ptrToMainWindow_;
+  std::unique_ptr<InformationForm> ptrToInformationForm_;
 };
 
 #endif // RECORDGENERATORFORM_H

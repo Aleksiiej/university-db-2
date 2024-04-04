@@ -21,6 +21,13 @@ void RecordGeneratorForm::on_generate_records_pushButton_clicked() {
   QString number = ui->lineEdit->text();
   if (ui->lineEdit->validator()->validate(number, pos) == 2) {
     ptrToMainWindow_->getPtrToDatabase()->generateData(number.toInt());
+    ptrToInformationForm_ = std::make_unique<InformationForm>();
+    ptrToInformationForm_->setRecordConfirmationText();
+    ptrToInformationForm_->show();
+  } else {
+    ptrToInformationForm_ = std::make_unique<InformationForm>();
+    ptrToInformationForm_->setRecordDenialText();
+    ptrToInformationForm_->show();
   }
 }
 

@@ -19,6 +19,7 @@ qt_add_executable(${PROJECT_NAME} main.cpp
                                   addrecordform.h addrecordform.cpp addrecordform.ui
                                   recordgeneratorform.h recordgeneratorform.cpp recordgeneratorform.ui
                                   showallform.h showallform.cpp showallform.ui
+                                  informationform.h informationform.cpp informationform.ui
 
 
 
