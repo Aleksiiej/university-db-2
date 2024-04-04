@@ -1,5 +1,6 @@
 #include "recordgeneratorform.h"
 #include "QIntValidator"
+#include "QString"
 #include "mainwindow.h"
 #include "ui_recordgeneratorform.h"
 
@@ -16,10 +17,11 @@ void RecordGeneratorForm::setPtrToMainWindow(MainWindow *ptrToMainWindow) {
 
 void RecordGeneratorForm::on_generate_records_pushButton_clicked() {
   ui->lineEdit->setValidator(new QIntValidator(0, 100, this));
-  // QString number = ui->lineEdit->text();
-
-  int number = std::stoi(ui->lineEdit->text().toStdString());
-  ptrToMainWindow_->getPtrToDatabase()->generateData(number);
+  int pos = 0;
+  QString number = ui->lineEdit->text();
+  if (ui->lineEdit->validator()->validate(number, pos) == 2) {
+    ptrToMainWindow_->getPtrToDatabase()->generateData(number.toInt());
+  }
 }
 
 void RecordGeneratorForm::on_close_pushButton_2_clicked() { close(); }
