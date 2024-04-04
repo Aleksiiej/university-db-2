@@ -1,7 +1,3 @@
-include(FetchContent)
-FetchContent_Declare(json URL https://github.com/nlohmann/json/releases/download/v3.11.3/json.tar.xz)
-FetchContent_MakeAvailable(json)
-
 qt_add_executable(${PROJECT_NAME} main.cpp
                                   mainwindow.h
                                   mainwindow.cpp
@@ -25,5 +21,5 @@ qt_add_executable(${PROJECT_NAME} main.cpp
                                   showallform.h showallform.cpp showallform.ui
                               )
 
-target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Widgets nlohmann_json::nlohmann_json)
+target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Widgets)
 target_compile_options(${PROJECT_NAME} PRIVATE -Werror -Wall -Wextra -pedantic)
