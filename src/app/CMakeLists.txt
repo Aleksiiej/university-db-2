@@ -6,7 +6,6 @@ qt_add_executable(${PROJECT_NAME} main.cpp
                                   Database.cpp
                                   Employee.hpp
                                   Employee.cpp
-                                  IDatabase.hpp
                                   Person.hpp
                                   Person.cpp
                                   PESELValidator.hpp

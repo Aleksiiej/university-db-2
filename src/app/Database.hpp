@@ -1,9 +1,8 @@
 #pragma once
-#include "IDatabase.hpp"
 #include "PESELValidator.hpp"
 #include "RecordGenerator.hpp"
 
-class Database : public IDatabase {
+class Database {
 public:
   void addStudent(const std::string &name, const std::string &surname,
                   const std::string &adress, const int &index,
@@ -27,8 +26,8 @@ public:
   bool removeByIndex(const int &index) noexcept;
   bool modifySalary(const std::string &PESEL, const float &newSalary) noexcept;
   bool validatePESEL(const std::string &PESEL) const noexcept;
-  void loadFromFile(const std::string &fileName = "../database.txt") noexcept;
-  void saveToFile(const std::string &fileName = "../database.txt") noexcept;
+  void loadToJson() const noexcept;
+  void fromJson(nlohmann::json &j, Person &person) const noexcept;
   void saveToJson() const noexcept;
   void toJson(nlohmann::json &j, Person &person) const noexcept;
   void generateData(const int &n) noexcept;
