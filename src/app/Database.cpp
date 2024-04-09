@@ -254,7 +254,26 @@ void Database::saveToFile(const std::string &fileName) noexcept {
   }
 }
 
-void Database::saveToJson() noexcept {}
+void Database::saveToJson() const noexcept {
+  nlohmann::json single;
+  nlohmann::json data;
+  std::ofstream outputFile("database.json");
+
+  for (const auto &person : database_) {
+    toJson(single, *person);
+    data.push_back(single);
+  }
+  outputFile << data;
+  outputFile.close();
+}
+
+void Database::toJson(nlohmann::json &j, Person &person) const noexcept {
+  j = nlohmann::json{
+      {"name", person.getName()},     {"surname", person.getSurname()},
+      {"adress", person.getAdress()}, {"index", person.getIndex()},
+      {"salary", person.getSalary()}, {"PESEL", person.getPESEL()},
+      {"sex", person.getSex()},       {"position", person.getPosition()}};
+}
 
 void Database::generateData(const int &n) noexcept {
   auto tempGenerator = std::make_unique<RecordGenerator>();
