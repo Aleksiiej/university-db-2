@@ -14,8 +14,11 @@ public:
   explicit InformationForm(QWidget *parent = nullptr);
   ~InformationForm();
 
-  void setRecordConfirmationText();
-  void setRecordDenialText();
+  void setRecordCreationSuccesText();
+  void setRecordCreationFailureText();
+
+  void setSaveSuccesText();
+  void setSavefailureText();
 
 private slots:
   void on_pushButton_clicked();

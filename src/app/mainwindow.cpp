@@ -43,7 +43,12 @@ void MainWindow::on_pushButton_10_clicked() {}
 
 void MainWindow::on_pushButton_11_clicked() {}
 
-void MainWindow::on_pushButton_12_clicked() {}
+void MainWindow::on_pushButton_12_clicked() {
+  getPtrToDatabase()->saveToJson();
+  ptrToInformationForm_ = std::make_unique<InformationForm>();
+  ptrToInformationForm_->setSaveSuccesText();
+  ptrToInformationForm_->show();
+}
 
 void MainWindow::on_pushButton_13_clicked() {
   ptrToRGeneratorForm_ = std::make_unique<RecordGeneratorForm>();

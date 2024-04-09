@@ -29,6 +29,7 @@ public:
   bool validatePESEL(const std::string &PESEL) const noexcept;
   void loadFromFile(const std::string &fileName = "../database.txt") noexcept;
   void saveToFile(const std::string &fileName = "../database.txt") noexcept;
+  void saveToJson() noexcept;
   void generateData(const int &n) noexcept;
   std::shared_ptr<Person> getPtrToRecord(const int &pos) const noexcept;
 

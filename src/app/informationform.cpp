@@ -8,12 +8,20 @@ InformationForm::InformationForm(QWidget *parent)
 
 InformationForm::~InformationForm() { delete ui; }
 
-void InformationForm::setRecordConfirmationText() {
+void InformationForm::setRecordCreationSuccesText() {
   ui->label->setText("Records created");
 }
 
-void InformationForm::setRecordDenialText() {
+void InformationForm::setRecordCreationFailureText() {
   ui->label->setText("Invalid number");
+}
+
+void InformationForm::setSaveSuccesText() {
+  ui->label->setText("Save succesful");
+}
+
+void InformationForm::setSavefailureText() {
+  ui->label->setText("Save failed");
 }
 
 void InformationForm::on_pushButton_clicked() { close(); }

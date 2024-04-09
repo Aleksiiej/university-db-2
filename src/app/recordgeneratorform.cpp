@@ -22,11 +22,11 @@ void RecordGeneratorForm::on_generate_records_pushButton_clicked() {
   if (ui->lineEdit->validator()->validate(number, pos) == 2) {
     ptrToMainWindow_->getPtrToDatabase()->generateData(number.toInt());
     ptrToInformationForm_ = std::make_unique<InformationForm>();
-    ptrToInformationForm_->setRecordConfirmationText();
+    ptrToInformationForm_->setRecordCreationSuccesText();
     ptrToInformationForm_->show();
   } else {
     ptrToInformationForm_ = std::make_unique<InformationForm>();
-    ptrToInformationForm_->setRecordDenialText();
+    ptrToInformationForm_->setRecordCreationFailureText();
     ptrToInformationForm_->show();
   }
 }
