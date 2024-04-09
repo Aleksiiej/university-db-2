@@ -19,7 +19,7 @@ public:
   // getters
   virtual std::string getName() const noexcept;
   virtual std::string getSurname() const noexcept;
-  virtual std::string getAdress() const noexcept;
+  virtual std::string getAddress() const noexcept;
   virtual Position getPosition() const noexcept;
   virtual int getIndex() const noexcept;
   virtual float getSalary() const noexcept;

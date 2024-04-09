@@ -20,16 +20,8 @@ void InformationForm::setSaveSuccesText() {
   ui->label->setText("Save succesful");
 }
 
-void InformationForm::setSaveFailureText() {
-  ui->label->setText("Save failed");
-}
-
 void InformationForm::setLoadSuccesText() {
   ui->label->setText("Load succesfull");
-}
-
-void InformationForm::setLoadFailureText() {
-  ui->label->setText("Load failed");
 }
 
 void InformationForm::on_pushButton_clicked() { close(); }

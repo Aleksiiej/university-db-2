@@ -41,7 +41,12 @@ void MainWindow::on_pushButton_9_clicked() {}
 
 void MainWindow::on_pushButton_10_clicked() {}
 
-void MainWindow::on_pushButton_11_clicked() {}
+void MainWindow::on_pushButton_11_clicked() {
+  getPtrToDatabase()->loadToJson();
+  ptrToInformationForm_ = std::make_unique<InformationForm>();
+  ptrToInformationForm_->setLoadSuccesText();
+  ptrToInformationForm_->show();
+}
 
 void MainWindow::on_pushButton_12_clicked() {
   getPtrToDatabase()->saveToJson();

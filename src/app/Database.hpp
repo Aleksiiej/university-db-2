@@ -26,8 +26,8 @@ public:
   bool removeByIndex(const int &index) noexcept;
   bool modifySalary(const std::string &PESEL, const float &newSalary) noexcept;
   bool validatePESEL(const std::string &PESEL) const noexcept;
-  void loadToJson() const noexcept;
-  void fromJson(nlohmann::json &j, Person &person) const noexcept;
+  void loadToJson() noexcept;
+  // void fromJson(nlohmann::json &j, Person &person) const noexcept;
   void saveToJson() const noexcept;
   void toJson(nlohmann::json &j, Person &person) const noexcept;
   void generateData(const int &n) noexcept;

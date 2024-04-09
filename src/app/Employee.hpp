@@ -13,7 +13,7 @@ public:
   // getters
   std::string getName() const noexcept override;
   std::string getSurname() const noexcept override;
-  std::string getAdress() const noexcept override;
+  std::string getAddress() const noexcept override;
   Position getPosition() const noexcept override;
   int getIndex() const noexcept override;
   float getSalary() const noexcept override;

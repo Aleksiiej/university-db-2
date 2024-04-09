@@ -26,7 +26,7 @@ void Database::printByPtr(const std::shared_ptr<Person> ptr) const noexcept {
   std::cout << "===================================" << std::endl;
   std::cout << "Name: " << ptr->getName() << std::endl;
   std::cout << "Surname: " << ptr->getSurname() << std::endl;
-  std::cout << "Adress: " << ptr->getAdress() << std::endl;
+  std::cout << "Adress: " << ptr->getAddress() << std::endl;
   std::cout << "Position: " << ptr->positionPrint[ptr->getPosition()]
             << std::endl;
   switch (ptr->getPosition()) {
@@ -53,7 +53,7 @@ std::string Database::returnRecordsAsString() {
     } else {
       sstream << "Sex: male" << std::endl;
     }
-    sstream << "Address: " << el->getAdress() << std::endl;
+    sstream << "Address: " << el->getAddress() << std::endl;
     if (static_cast<bool>(el->getPosition())) {
       sstream << "Position: Employee" << std::endl;
       sstream << "Salary: " << el->getSalary() << std::endl;
@@ -159,9 +159,29 @@ bool Database::validatePESEL(const std::string &PESEL) const noexcept {
   return tempValidator->validatePESEL(PESEL);
 }
 
-void Database::loadToJson() const noexcept {}
-
-void Database::fromJson(nlohmann::json &j, Person &person) const noexcept {}
+void Database::loadToJson() noexcept {
+  nlohmann::json data;
+  std::ifstream inputFile("database.json");
+  inputFile >> data;
+  for (const auto &person : data) {
+    const Position position = person.at("position").get<Position>();
+    if (position == Position::Student) {
+      const int index = person.at("index").get<int>();
+      addStudent(person.at("name").get<std::string>(),
+                 person.at("surname").get<std::string>(),
+                 person.at("address").get<std::string>(), index,
+                 person.at("PESEL").get<std::string>(),
+                 person.at("sex").get<Sex>(), position);
+    } else if (position == Position::Employee) {
+      const float salary = person.at("salary").get<float>();
+      addEmployee(person.at("name").get<std::string>(),
+                  person.at("surname").get<std::string>(),
+                  person.at("address").get<std::string>(), salary,
+                  person.at("PESEL").get<std::string>(),
+                  person.at("sex").get<Sex>(), position);
+    }
+  }
+}
 
 void Database::saveToJson() const noexcept {
   nlohmann::json single;
@@ -178,10 +198,10 @@ void Database::saveToJson() const noexcept {
 
 void Database::toJson(nlohmann::json &j, Person &person) const noexcept {
   j = nlohmann::json{
-      {"name", person.getName()},     {"surname", person.getSurname()},
-      {"adress", person.getAdress()}, {"index", person.getIndex()},
-      {"salary", person.getSalary()}, {"PESEL", person.getPESEL()},
-      {"sex", person.getSex()},       {"position", person.getPosition()}};
+      {"name", person.getName()},       {"surname", person.getSurname()},
+      {"address", person.getAddress()}, {"index", person.getIndex()},
+      {"salary", person.getSalary()},   {"PESEL", person.getPESEL()},
+      {"sex", person.getSex()},         {"position", person.getPosition()}};
 }
 
 void Database::generateData(const int &n) noexcept {

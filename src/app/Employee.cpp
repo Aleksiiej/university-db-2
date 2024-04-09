@@ -3,7 +3,7 @@
 // getters
 std::string Employee::getName() const noexcept { return name_; }
 std::string Employee::getSurname() const noexcept { return surname_; }
-std::string Employee::getAdress() const noexcept { return adress_; }
+std::string Employee::getAddress() const noexcept { return adress_; }
 Position Employee::getPosition() const noexcept { return position_; }
 int Employee::getIndex() const noexcept { return 0; }
 float Employee::getSalary() const noexcept { return salary_; }

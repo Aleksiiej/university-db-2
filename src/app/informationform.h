@@ -16,12 +16,8 @@ public:
 
   void setRecordCreationSuccesText();
   void setRecordCreationFailureText();
-
   void setSaveSuccesText();
-  void setSaveFailureText();
-
   void setLoadSuccesText();
-  void setLoadFailureText();
 
 private slots:
   void on_pushButton_clicked();
