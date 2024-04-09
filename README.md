@@ -1,19 +1,23 @@
 # C++ Academic Staff Database Project
 ## Project Overview
-This project involves creating a database management system for academic staff, developed in C++ using object-oriented programming principles. The aim was to enhance my skills in developing complex software systems in C++. The project, optimized for Linux systems, showcases a blend of advanced C++ features, unit testing, and efficient data management techniques.
+This project is aimed at developing a database management system for academic staff using C++ with an object-oriented approach. The primary goal was to enhance skills in C++ programming. The project utilizes CMake for project management, Qt framework for creating the graphical user interface, and nlohmann library for data storage in JSON format. Unit tests were written using the GTest framework. Visual Studio was employed as the integrated development environment (IDE). The program is intended for computers running the Linux operating system.
 
 ![Screenshot from 2023-11-27 15-15-21](https://github.com/Aleksiiej/university-db/assets/94867075/904b4e28-5288-4c02-90da-e4b6f77c9140)
 
 ## Key Features:
 - Object-Oriented Design: The system is architected using C++ object-oriented programming, promoting modular, reusable, and maintainable code.
 - CMake Integration: Utilizes CMake for project build management, demonstrating proficiency in modern C++ development practices.
+- Graphical User Interface: Provides an intuitive and user-friendly interface for interaction.
+- JSON Data Storage: Utilizes the nlohmann library to store data in JSON format, ensuring compatibility and flexibility.
 - Unit Testing with GTest: Incorporates unit tests using the Google Test (GTest) framework, ensuring the reliability and robustness of the code.
 - Data Management: Efficient handling of academic staff data, including storage, retrieval, and manipulation functionalities.
 
 ## Technical Stack:
-- Language: Modern C++ (11, 14, 17)
+- Language: Modern C++ (11, 14, 17) as main programming language for the project
+- Build System: CMake used for project management and build automation
+- Qt Framework: Employed for creating the graphical user interface.
+- nlohmann JSON Library: Utilized for data storage in JSON format.
 - Testing Framework: Google Test (GTest)
-- Build System: CMake
 - Development Tool: Visual Studio Code
 - Platform: Linux
 
@@ -27,4 +31,7 @@ This project involves creating a database management system for academic staff, 
 - Ensure C++ and CMake are installed on your Linux system.
 - Clone the repository.
 - Use CMake to build the project and run the tests using GTest.
-- Start managing academic staff data with the program.
+- Run the executable and start managing academic staff data with the program.
+
+## Usage
+Upon running the program, the user will be presented with the graphical interface, allowing them to perform various operations related to managing academic staff data. Users can add, edit, delete, and search for academic staff records efficiently.
