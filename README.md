@@ -2,7 +2,8 @@
 ## Project Overview
 This project is aimed at developing a database management system for academic staff using C++ with an object-oriented approach. The primary goal was to enhance skills in C++ programming. The project utilizes CMake for project management, Qt framework for creating the graphical user interface, and nlohmann library for data storage in JSON format. Unit tests were written using the GTest framework. Visual Studio was employed as the integrated development environment (IDE). The program is intended for computers running the Linux operating system.
 
-![Screenshot from 2023-11-27 15-15-21](https://github.com/Aleksiiej/university-db/assets/94867075/904b4e28-5288-4c02-90da-e4b6f77c9140)
+![Screenshot from 2024-04-09 23-57-12](https://github.com/Aleksiiej/university-db-2/assets/94867075/438ccb04-7d84-4037-9d85-8f80023f65fd)
+
 
 ## Key Features:
 - Object-Oriented Design: The system is architected using C++ object-oriented programming, promoting modular, reusable, and maintainable code.
