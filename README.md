@@ -1,4 +1,5 @@
 # C++ Academic Staff Database Project
+# PROJECT IN DEVELOPMENT 
 ## Project Overview
 This project is aimed at developing a database management system for academic staff using C++ with an object-oriented approach. The primary goal was to enhance skills in C++ programming. The project utilizes CMake for project management, Qt framework for creating the graphical user interface, and nlohmann library for data storage in JSON format. Unit tests were written using the GTest framework. Visual Studio was employed as the integrated development environment (IDE). The program is intended for computers running the Linux operating system.
 
