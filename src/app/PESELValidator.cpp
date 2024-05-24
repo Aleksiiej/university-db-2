@@ -1,19 +1,18 @@
 #include "PESELValidator.hpp"
+#include <algorithm>
+#include <numeric>
+#include <vector>
 
 bool PESELValidator::validatePESEL(const std::string &PESEL) const noexcept {
   if (validatePESELSize(PESEL) == false) {
-    std::cout << "PESEL is invalid" << std::endl;
     return false;
   }
   if (validatePESELDate(PESEL) == false) {
-    std::cout << "PESEL is invalid" << std::endl;
     return false;
   }
   if (validateControlNumber(PESEL) == false) {
-    std::cout << "PESEL is invalid" << std::endl;
     return false;
   }
-  std::cout << "PESEL is valid" << std::endl;
   return true;
 }
 

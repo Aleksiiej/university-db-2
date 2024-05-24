@@ -1,5 +1,4 @@
 #include "Database.hpp"
-#include "RecordGenerator.hpp"
 #include "mainwindow.h"
 
 #include <QApplication>

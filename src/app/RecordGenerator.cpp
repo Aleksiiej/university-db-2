@@ -1,4 +1,5 @@
 #include "RecordGenerator.hpp"
+#include <iostream>
 
 std::unique_ptr<Person> RecordGenerator::generateRandomRecord() const noexcept {
   std::random_device rd;

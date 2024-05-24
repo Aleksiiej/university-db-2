@@ -10,7 +10,6 @@ public:
 
   virtual ~Employee() = default;
 
-  // getters
   std::string getName() const noexcept override;
   std::string getSurname() const noexcept override;
   std::string getAddress() const noexcept override;
@@ -20,7 +19,6 @@ public:
   std::string getPESEL() const noexcept override;
   Sex getSex() const noexcept override;
 
-  // setters
   void setSalary(const float &salary) noexcept override;
 
 private:

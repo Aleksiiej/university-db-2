@@ -27,7 +27,6 @@ public:
   bool modifySalary(const std::string &PESEL, const float &newSalary) noexcept;
   bool validatePESEL(const std::string &PESEL) const noexcept;
   void loadToJson() noexcept;
-  // void fromJson(nlohmann::json &j, Person &person) const noexcept;
   void saveToJson() const noexcept;
   void toJson(nlohmann::json &j, Person &person) const noexcept;
   void generateData(const int &n) noexcept;
@@ -35,5 +34,4 @@ public:
 
 private:
   std::vector<std::shared_ptr<Person>> database_;
-  std::string fileName_{"../database.txt"};
 };

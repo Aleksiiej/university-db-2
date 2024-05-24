@@ -1,6 +1,5 @@
 #pragma once
 #include "Person.hpp"
-#include <iostream>
 
 class Student : public Person {
 public:
@@ -11,7 +10,6 @@ public:
 
   virtual ~Student() = default;
 
-  // getters
   std::string getName() const noexcept override;
   std::string getSurname() const noexcept override;
   std::string getAddress() const noexcept override;
@@ -21,7 +19,6 @@ public:
   std::string getPESEL() const noexcept override;
   Sex getSex() const noexcept override;
 
-  // setters
   void setSalary(const float &) noexcept override;
 
 private:

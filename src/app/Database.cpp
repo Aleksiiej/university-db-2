@@ -1,4 +1,5 @@
 #include "Database.hpp"
+#include <iostream>
 
 void Database::addStudent(const std::string &name, const std::string &surname,
                           const std::string &adress, const int &index,
