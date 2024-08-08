@@ -25,7 +25,11 @@ void MainWindow::on_pushButton_2_clicked() {
   ptrToShowAllForm_->show();
 }
 
-void MainWindow::on_pushButton_3_clicked() {}
+void MainWindow::on_pushButton_3_clicked() {
+  ptrToFindRecordBySurnameForm_ = std::make_unique<FindRecordBySurnameForm>(this);
+  ptrToFindRecordBySurnameForm_->setPtrToMainWindow(this);
+  ptrToFindRecordBySurnameForm_->show();
+}
 
 void MainWindow::on_pushButton_4_clicked() {}
 

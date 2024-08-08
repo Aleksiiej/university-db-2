@@ -3,6 +3,7 @@
 
 #include "Database.hpp"
 #include "addrecordform.h"
+#include "findrecordbysurnameform.h"
 #include "informationform.h"
 #include "recordgeneratorform.h"
 #include "showallform.h"
@@ -60,6 +61,7 @@ private:
   std::shared_ptr<RecordGenerator> ptrToRGenerator_;
   std::unique_ptr<AddRecordForm> ptrToAddRecordForm_;
   std::unique_ptr<ShowAllForm> ptrToShowAllForm_;
+  std::unique_ptr<FindRecordBySurnameForm> ptrToFindRecordBySurnameForm_;
   std::unique_ptr<RecordGeneratorForm> ptrToRGeneratorForm_;
   std::unique_ptr<InformationForm> ptrToInformationForm_;
 };
