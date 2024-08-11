@@ -30,5 +30,9 @@ void FindRecordBySurnameForm::on_pushButton_2_clicked()
   ui->label->setText("");
   QString surname = ui->lineEdit->text();
   std::string records = ptrToMainWindow_->getPtrToDatabase()->returnRecordsWithGivenSurname(surname.toStdString());
+  if(records.empty())
+  {
+    appendTextToLabel("no records found with the given surname");
+  }
   appendTextToLabel(QString::fromStdString(records));
 }
