@@ -16,7 +16,12 @@ public:
   explicit FindRecordBySurnameForm(QWidget *parent = nullptr);
   ~FindRecordBySurnameForm();
 
+  void appendTextToLabel(const QString &text);
   void setPtrToMainWindow(MainWindow *ptrToMainWindow);
+
+private slots:
+  void on_pushButton_clicked();
+  void on_pushButton_2_clicked();
 
 private:
   std::unique_ptr<Ui::FindRecordBySurnameForm> ui;

@@ -68,6 +68,35 @@ std::string Database::returnRecordsAsString() {
   return sstream.str();
 }
 
+std::string Database::returnRecordsWithGivenSurname(std::string surname)
+{
+  std::stringstream sstream;
+  for (const auto &el : database_)
+  {
+    if(el->getSurname() == surname)
+    {
+      sstream << "Name: " << el->getName() << std::endl;
+      sstream << "Surname: " << el->getSurname() << std::endl;
+      if (static_cast<bool>(el->getSex())) {
+        sstream << "Sex: female" << std::endl;
+      } else {
+        sstream << "Sex: male" << std::endl;
+      }
+      sstream << "Address: " << el->getAddress() << std::endl;
+      if (static_cast<bool>(el->getPosition())) {
+        sstream << "Position: Employee" << std::endl;
+        sstream << "Salary: " << el->getSalary() << std::endl;
+        sstream << std::endl;
+      } else {
+        sstream << "Position: Student" << std::endl;
+        sstream << "Index: " << el->getIndex() << std::endl;
+        sstream << std::endl;
+      }
+    }
+  }
+  return sstream.str();
+}
+
 void Database::showBySurname(const std::string &surname) const noexcept {
   system("clear");
   auto tempVec = findBySurname(surname);

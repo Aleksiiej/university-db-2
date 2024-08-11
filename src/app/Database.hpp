@@ -15,6 +15,7 @@ public:
   void show() const noexcept;
   void printByPtr(const std::shared_ptr<Person> ptr) const noexcept;
   std::string returnRecordsAsString();
+  std::string returnRecordsWithGivenSurname(std::string surname);
   void showBySurname(const std::string &surname) const noexcept;
   void showByPESEL(const std::string &PESEL) const noexcept;
   std::vector<std::shared_ptr<Person>>
