@@ -16,6 +16,7 @@ public:
   void printByPtr(const std::shared_ptr<Person> ptr) const noexcept;
   std::string returnRecordsAsString();
   std::string returnRecordsWithGivenSurname(std::string surname);
+  std::string returnRecordWithGivenPesel(std::string pesel);
   void showBySurname(const std::string &surname) const noexcept;
   void showByPESEL(const std::string &PESEL) const noexcept;
   std::vector<std::shared_ptr<Person>>
@@ -24,6 +25,7 @@ public:
   void sortBySurname() noexcept;
   void sortByPESEL() noexcept;
   void sortBySalary() noexcept;
+  std::string returnEmployeesSortedBySalary();
   bool removeByIndex(const int &index) noexcept;
   bool modifySalary(const std::string &PESEL, const float &newSalary) noexcept;
   bool validatePESEL(const std::string &PESEL) const noexcept;

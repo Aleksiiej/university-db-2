@@ -16,11 +16,12 @@ public:
   explicit FindRecordByPeselForm(QWidget *parent = nullptr);
   ~FindRecordByPeselForm();
 
-  // void appendTextToLabel(const QString &text);
+  void appendTextToLabel(const QString &text);
   void setPtrToMainWindow(MainWindow *ptrToMainWindow);
 
 private slots:
   void on_pushButton_clicked();
+  void on_pushButton_2_clicked();
 
 private:
   Ui::FindRecordByPeselForm *ui;

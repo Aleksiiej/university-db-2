@@ -8,6 +8,9 @@
 #include "informationform.h"
 #include "recordgeneratorform.h"
 #include "showallform.h"
+#include "sortemployeesrecordsbysalaryform.h"
+#include "sortrecordsbypeselform.h"
+#include "sortrecordsbysurnameform.h"
 
 #include <QMainWindow>
 
@@ -64,6 +67,9 @@ private:
   std::unique_ptr<ShowAllForm> ptrToShowAllForm_;
   std::unique_ptr<FindRecordByPeselForm> ptrToFindRecordByPeselForm_;
   std::unique_ptr<FindRecordBySurnameForm> ptrToFindRecordBySurnameForm_;
+  std::unique_ptr<SortEmployeesRecordsBySalaryForm> ptrToSortEmployeedRecordsBySalaryForm_;
+  std::unique_ptr<SortRecordsByPeselForm> ptrToSortRecordsByPeselForm_;
+  std::unique_ptr<SortRecordsBySurnameForm> ptrToSortRecordsBySurnameForm_;
   std::unique_ptr<RecordGeneratorForm> ptrToRGeneratorForm_;
   std::unique_ptr<InformationForm> ptrToInformationForm_;
 };

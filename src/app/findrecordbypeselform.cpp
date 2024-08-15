@@ -9,11 +9,11 @@ FindRecordByPeselForm::FindRecordByPeselForm(QWidget *parent)
 
 FindRecordByPeselForm::~FindRecordByPeselForm() { delete ui; }
 
-// void FindRecordByPeselForm::appendTextToLabel(const QString &text) {
-//   QString temp = ui->label->text();
-//   temp.append(text + "\n");
-//   ui->label->setText(temp);
-// }
+void FindRecordByPeselForm::appendTextToLabel(const QString &text) {
+  QString temp = ui->label->text();
+  temp.append(text + "\n");
+  ui->label->setText(temp);
+}
 
 void FindRecordByPeselForm::setPtrToMainWindow(MainWindow *ptrToMainWindow)
 {
@@ -24,3 +24,16 @@ void FindRecordByPeselForm::on_pushButton_clicked()
 {
   close();
 }
+
+void FindRecordByPeselForm::on_pushButton_2_clicked()
+{
+  ui->label->setText("");
+  QString pesel = ui->lineEdit->text();
+  std::string record = ptrToMainWindow_->getPtrToDatabase()->returnRecordWithGivenPesel(pesel.toStdString());
+  if(record.empty())
+  {
+    appendTextToLabel("no records found with the given surname");
+  }
+  appendTextToLabel(QString::fromStdString(record));
+}
+

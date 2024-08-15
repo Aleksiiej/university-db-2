@@ -37,11 +37,24 @@ void MainWindow::on_pushButton_4_clicked() {
   ptrToFindRecordByPeselForm_->show();
 }
 
-void MainWindow::on_pushButton_5_clicked() {}
+void MainWindow::on_pushButton_5_clicked() {
+  ptrToSortRecordsBySurnameForm_ = std::make_unique<SortRecordsBySurnameForm>();
+  ptrToDatabase_->sortBySurname();
+  ptrToSortRecordsBySurnameForm_->show();
+}
 
-void MainWindow::on_pushButton_6_clicked() {}
+void MainWindow::on_pushButton_6_clicked() {
+  ptrToSortRecordsByPeselForm_ = std::make_unique<SortRecordsByPeselForm>();
+  ptrToDatabase_->sortByPESEL();
+  ptrToSortRecordsByPeselForm_->show();
+}
 
-void MainWindow::on_pushButton_7_clicked() {}
+void MainWindow::on_pushButton_7_clicked() {
+  ptrToSortEmployeedRecordsBySalaryForm_ = std::make_unique<SortEmployeesRecordsBySalaryForm>();
+  ptrToSortEmployeedRecordsBySalaryForm_->setPtrToMainWindow(this);
+  ptrToSortEmployeedRecordsBySalaryForm_->appendTextToLabel(QString::fromStdString(ptrToDatabase_->returnEmployeesSortedBySalary()));
+  ptrToSortEmployeedRecordsBySalaryForm_->show();
+}
 
 void MainWindow::on_pushButton_8_clicked() {}
 
