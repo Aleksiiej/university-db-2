@@ -25,6 +25,7 @@ qt_add_executable(${PROJECT_NAME} main.cpp
                                   sortrecordsbypeselform.h sortrecordsbypeselform.cpp sortrecordsbypeselform.ui
                                   sortemployeesrecordsbysalaryform.h sortemployeesrecordsbysalaryform.cpp sortemployeesrecordsbysalaryform.ui
                                   removestudentrecordbyindexform.h removestudentrecordbyindexform.cpp removestudentrecordbyindexform.ui
+                                  modifysalaryinemployeerecordform.h modifysalaryinemployeerecordform.cpp modifysalaryinemployeerecordform.ui
 
 
 
