@@ -62,7 +62,11 @@ void MainWindow::on_pushButton_8_clicked() {
   ptrToRemoveStudentRecordByIndexForm_->show();
 }
 
-void MainWindow::on_pushButton_9_clicked() {}
+void MainWindow::on_pushButton_9_clicked() {
+  ptrToModifySalaryInEmployeeRecordForm_ = std::make_unique<ModifySalaryInEmployeeRecordForm>();
+  ptrToModifySalaryInEmployeeRecordForm_->setPtrToMainWindow(this);
+  ptrToModifySalaryInEmployeeRecordForm_->show();
+}
 
 void MainWindow::on_pushButton_10_clicked() {}
 ;

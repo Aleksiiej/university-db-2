@@ -6,6 +6,7 @@
 #include "findrecordbypeselform.h"
 #include "findrecordbysurnameform.h"
 #include "informationform.h"
+#include "modifysalaryinemployeerecordform.h"
 #include "recordgeneratorform.h"
 #include "removestudentrecordbyindexform.h"
 #include "showallform.h"
@@ -72,6 +73,7 @@ private:
   std::unique_ptr<SortRecordsByPeselForm> ptrToSortRecordsByPeselForm_;
   std::unique_ptr<SortRecordsBySurnameForm> ptrToSortRecordsBySurnameForm_;
   std::unique_ptr<RemoveStudentRecordByIndexForm> ptrToRemoveStudentRecordByIndexForm_;
+  std::unique_ptr<ModifySalaryInEmployeeRecordForm> ptrToModifySalaryInEmployeeRecordForm_;
   std::unique_ptr<RecordGeneratorForm> ptrToRGeneratorForm_;
   std::unique_ptr<InformationForm> ptrToInformationForm_;
 };
