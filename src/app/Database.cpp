@@ -220,6 +220,18 @@ std::string Database::returnEmployeesSortedBySalary()
   return sstream.str();
 }
 
+bool Database::checkIfGivenIndexExist(const int& index)
+{
+  for(const auto& record : database_)
+  {
+    if(record->getPosition() == Position::Student and record->getIndex() == index)
+    {
+      return true;
+    }
+  }
+  return false;
+}
+
 bool Database::removeByIndex(const int &index) noexcept {
   if (database_.size() == 0) {
     std::cout << "No records in database" << std::endl;

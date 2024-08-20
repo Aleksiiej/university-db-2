@@ -26,6 +26,7 @@ public:
   void sortByPESEL() noexcept;
   void sortBySalary() noexcept;
   std::string returnEmployeesSortedBySalary();
+  bool checkIfGivenIndexExist(const int& index);
   bool removeByIndex(const int &index) noexcept;
   bool modifySalary(const std::string &PESEL, const float &newSalary) noexcept;
   bool validatePESEL(const std::string &PESEL) const noexcept;
