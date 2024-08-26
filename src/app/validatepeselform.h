@@ -1,6 +1,7 @@
 #ifndef VALIDATEPESELFORM_H
 #define VALIDATEPESELFORM_H
 
+#include "PESELValidator.hpp"
 #include <QDialog>
 
 class MainWindow;
@@ -21,9 +22,12 @@ public:
 private slots:
   void on_pushButton_clicked();
 
+  void on_pushButton_2_clicked();
+
 private:
   Ui::ValidatePeselForm *ui;
   MainWindow *ptrToMainWindow_;
+  std::unique_ptr<PESELValidator> PESELValidatorPtr_;
 };
 
 #endif // VALIDATEPESELFORM_H
