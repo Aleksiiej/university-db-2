@@ -28,10 +28,11 @@ public:
   bool validatePESEL(const std::string &PESEL) const noexcept;
   void loadToJson() noexcept;
   void saveToJson() const noexcept;
-  void toJson(nlohmann::json &j, Person &person) const noexcept;
   void generateData(const int &n) noexcept;
   std::shared_ptr<Person> getPtrToRecord(const int &pos) const noexcept;
 
 private:
   std::vector<std::shared_ptr<Person>> database_;
+  void putRecordInSstream(std::stringstream& sstream, const std::shared_ptr<Person>& record) const noexcept;
+  void toJson(nlohmann::json &j, Person &person) const noexcept;
 };

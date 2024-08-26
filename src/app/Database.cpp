@@ -16,32 +16,9 @@ void Database::addEmployee(const std::string &name, const std::string &surname, 
 std::string Database::returnRecordsAsString()
 {
     std::stringstream sstream;
-    for (const auto &el : database_)
+    for (const auto &record : database_)
     {
-        sstream << "Name: " << el->getName() << std::endl;
-        sstream << "Surname: " << el->getSurname() << std::endl;
-        sstream << "PESEL: " << el->getPESEL() << std::endl;
-        if (static_cast<bool>(el->getSex()))
-        {
-            sstream << "Sex: female" << std::endl;
-        }
-        else
-        {
-            sstream << "Sex: male" << std::endl;
-        }
-        sstream << "Address: " << el->getAddress() << std::endl;
-        if (static_cast<bool>(el->getPosition()))
-        {
-            sstream << "Position: Employee" << std::endl;
-            sstream << "Salary: " << el->getSalary() << std::endl;
-            sstream << std::endl;
-        }
-        else
-        {
-            sstream << "Position: Student" << std::endl;
-            sstream << "Index: " << el->getIndex() << std::endl;
-            sstream << std::endl;
-        }
+        putRecordInSstream(sstream, record);
     }
     return sstream.str();
 }
@@ -49,34 +26,12 @@ std::string Database::returnRecordsAsString()
 std::string Database::returnRecordsWithGivenSurname(std::string surname)
 {
     std::stringstream sstream;
-    for (const auto &el : database_)
+    for (const auto &record : database_)
     {
-        if (el->getSurname() == surname)
+        if (record->getSurname() == surname)
         {
-            sstream << "Name: " << el->getName() << std::endl;
-            sstream << "Surname: " << el->getSurname() << std::endl;
-            sstream << "PESEL: " << el->getPESEL() << std::endl;
-            if (static_cast<bool>(el->getSex()))
-            {
-                sstream << "Sex: female" << std::endl;
-            }
-            else
-            {
-                sstream << "Sex: male" << std::endl;
-            }
-            sstream << "Address: " << el->getAddress() << std::endl;
-            if (static_cast<bool>(el->getPosition()))
-            {
-                sstream << "Position: Employee" << std::endl;
-                sstream << "Salary: " << el->getSalary() << std::endl;
-                sstream << std::endl;
-            }
-            else
-            {
-                sstream << "Position: Student" << std::endl;
-                sstream << "Index: " << el->getIndex() << std::endl;
-                sstream << std::endl;
-            }
+            putRecordInSstream(sstream, record);
+            break;
         }
     }
     return sstream.str();
@@ -85,38 +40,15 @@ std::string Database::returnRecordsWithGivenSurname(std::string surname)
 std::string Database::returnRecordWithGivenPesel(std::string pesel)
 {
     std::stringstream sstream;
-    for (const auto &el : database_)
+    for (const auto &record : database_)
     {
-        if (el->getPESEL() == pesel)
+        if (record->getPESEL() == pesel)
         {
-            sstream << "Name: " << el->getName() << std::endl;
-            sstream << "Surname: " << el->getSurname() << std::endl;
-            sstream << "PESEL: " << el->getPESEL() << std::endl;
-            if (static_cast<bool>(el->getSex()))
-            {
-                sstream << "Sex: female" << std::endl;
-            }
-            else
-            {
-                sstream << "Sex: male" << std::endl;
-            }
-            sstream << "Address: " << el->getAddress() << std::endl;
-            if (static_cast<bool>(el->getPosition()))
-            {
-                sstream << "Position: Employee" << std::endl;
-                sstream << "Salary: " << el->getSalary() << std::endl;
-                sstream << std::endl;
-            }
-            else
-            {
-                sstream << "Position: Student" << std::endl;
-                sstream << "Index: " << el->getIndex() << std::endl;
-                sstream << std::endl;
-            }
+            putRecordInSstream(sstream, record);
+            break;
         }
-        return sstream.str();
     }
-    return std::string{};
+    return sstream.str();
 }
 
 std::vector<std::shared_ptr<Person>> Database::findBySurname(const std::string &surname) const noexcept
@@ -175,23 +107,9 @@ std::string Database::returnEmployeesSortedBySalary()
     }
     std::sort(begin(ret), end(ret), [](auto lhs, auto rhs) { return lhs->getSalary() < rhs->getSalary(); });
     std::stringstream sstream;
-    for (const auto &el : ret)
+    for (const auto &record : ret)
     {
-        sstream << "Name: " << el->getName() << std::endl;
-        sstream << "Surname: " << el->getSurname() << std::endl;
-        sstream << "PESEL: " << el->getPESEL() << std::endl;
-        if (static_cast<bool>(el->getSex()))
-        {
-            sstream << "Sex: female" << std::endl;
-        }
-        else
-        {
-            sstream << "Sex: male" << std::endl;
-        }
-        sstream << "Address: " << el->getAddress() << std::endl;
-        sstream << "Position: Employee" << std::endl;
-        sstream << "Salary: " << el->getSalary() << std::endl;
-        sstream << std::endl;
+        putRecordInSstream(sstream, record);
     }
     return sstream.str();
 }
@@ -279,14 +197,6 @@ void Database::saveToJson() const noexcept
     outputFile.close();
 }
 
-void Database::toJson(nlohmann::json &j, Person &person) const noexcept
-{
-    j = nlohmann::json{{"name", person.getName()},       {"surname", person.getSurname()},
-                       {"address", person.getAddress()}, {"index", person.getIndex()},
-                       {"salary", person.getSalary()},   {"PESEL", person.getPESEL()},
-                       {"sex", person.getSex()},         {"position", person.getPosition()}};
-}
-
 void Database::generateData(const int &n) noexcept
 {
     auto tempGenerator = std::make_unique<RecordGenerator>();
@@ -299,4 +209,40 @@ void Database::generateData(const int &n) noexcept
 std::shared_ptr<Person> Database::getPtrToRecord(const int &pos) const noexcept
 {
     return database_.at(pos);
+}
+
+void Database::putRecordInSstream(std::stringstream& sstream, const std::shared_ptr<Person>& record) const noexcept
+{
+    sstream << "Name: " << record->getName() << std::endl;
+    sstream << "Surname: " << record->getSurname() << std::endl;
+    sstream << "PESEL: " << record->getPESEL() << std::endl;
+    if (static_cast<bool>(record->getSex()))
+    {
+        sstream << "Sex: female" << std::endl;
+    }
+    else
+    {
+        sstream << "Sex: male" << std::endl;
+    }
+    sstream << "Address: " << record->getAddress() << std::endl;
+    if (static_cast<bool>(record->getPosition()))
+    {
+        sstream << "Position: Employee" << std::endl;
+        sstream << "Salary: " << record->getSalary() << std::endl;
+        sstream << std::endl;
+    }
+    else
+    {
+        sstream << "Position: Student" << std::endl;
+        sstream << "Index: " << record->getIndex() << std::endl;
+        sstream << std::endl;
+    }
+}
+
+void Database::toJson(nlohmann::json &j, Person &person) const noexcept
+{
+    j = nlohmann::json{{"name", person.getName()},       {"surname", person.getSurname()},
+                       {"address", person.getAddress()}, {"index", person.getIndex()},
+                       {"salary", person.getSalary()},   {"PESEL", person.getPESEL()},
+                       {"sex", person.getSex()},         {"position", person.getPosition()}};
 }
