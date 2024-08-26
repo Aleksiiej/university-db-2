@@ -9,15 +9,16 @@ namespace Ui {
 class FindRecordBySurnameForm;
 }
 
-class FindRecordBySurnameForm : public QDialog {
+class FindRecordBySurnameForm : public QDialog
+{
   Q_OBJECT
 
 public:
-  explicit FindRecordBySurnameForm(QWidget *parent = nullptr);
+  explicit FindRecordBySurnameForm(QWidget* parent = nullptr);
   ~FindRecordBySurnameForm();
 
-  void appendTextToLabel(const QString &text);
-  void setPtrToMainWindow(MainWindow *ptrToMainWindow);
+  void appendTextToLabel(const QString& text);
+  void setPtrToMainWindow(MainWindow* ptrToMainWindow);
 
 private slots:
   void on_pushButton_clicked();
@@ -25,7 +26,7 @@ private slots:
 
 private:
   std::unique_ptr<Ui::FindRecordBySurnameForm> ui;
-  MainWindow *ptrToMainWindow_;
+  MainWindow* ptrToMainWindow_;
 };
 
 #endif // FINDRECORDBYSURNAMEFORM_H

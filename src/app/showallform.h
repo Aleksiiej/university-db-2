@@ -9,15 +9,16 @@ namespace Ui {
 class ShowAllForm;
 }
 
-class ShowAllForm : public QDialog {
+class ShowAllForm : public QDialog
+{
   Q_OBJECT
 
 public:
-  explicit ShowAllForm(QWidget *parent = nullptr);
+  explicit ShowAllForm(QWidget* parent = nullptr);
   ~ShowAllForm();
 
-  void appendTextToLabel(const QString &text);
-  void setPtrToMainWindow(MainWindow *ptrToMainWindow);
+  void appendTextToLabel(const QString& text);
+  void setPtrToMainWindow(MainWindow* ptrToMainWindow);
 
 private slots:
   void on_pushButton_clicked();
@@ -25,7 +26,7 @@ private slots:
 
 private:
   std::unique_ptr<Ui::ShowAllForm> ui;
-  MainWindow *ptrToMainWindow_;
+  MainWindow* ptrToMainWindow_;
 };
 
 #endif // SHOWALLFORM_H

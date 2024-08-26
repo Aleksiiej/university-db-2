@@ -7,11 +7,12 @@ namespace Ui {
 class InformationForm;
 }
 
-class InformationForm : public QDialog {
+class InformationForm : public QDialog
+{
   Q_OBJECT
 
 public:
-  explicit InformationForm(QWidget *parent = nullptr);
+  explicit InformationForm(QWidget* parent = nullptr);
   ~InformationForm();
 
   void setRecordCreationSuccesText();
@@ -23,7 +24,7 @@ private slots:
   void on_pushButton_clicked();
 
 private:
-  Ui::InformationForm *ui;
+  Ui::InformationForm* ui;
 };
 
 #endif // INFORMATIONFORM_H

@@ -1,27 +1,45 @@
 #include "informationform.h"
+
 #include "ui_informationform.h"
 
-InformationForm::InformationForm(QWidget *parent)
-    : QDialog(parent), ui(new Ui::InformationForm) {
+InformationForm::InformationForm(QWidget* parent)
+  : QDialog(parent)
+  , ui(new Ui::InformationForm)
+{
   ui->setupUi(this);
 }
 
-InformationForm::~InformationForm() { delete ui; }
+InformationForm::~InformationForm()
+{
+  delete ui;
+}
 
-void InformationForm::setRecordCreationSuccesText() {
+void
+InformationForm::setRecordCreationSuccesText()
+{
   ui->label->setText("Records created");
 }
 
-void InformationForm::setRecordCreationFailureText() {
+void
+InformationForm::setRecordCreationFailureText()
+{
   ui->label->setText("Invalid number");
 }
 
-void InformationForm::setSaveSuccesText() {
+void
+InformationForm::setSaveSuccesText()
+{
   ui->label->setText("Save succesful");
 }
 
-void InformationForm::setLoadSuccesText() {
+void
+InformationForm::setLoadSuccesText()
+{
   ui->label->setText("Load succesfull");
 }
 
-void InformationForm::on_pushButton_clicked() { close(); }
+void
+InformationForm::on_pushButton_clicked()
+{
+  close();
+}

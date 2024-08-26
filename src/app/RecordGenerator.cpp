@@ -1,7 +1,10 @@
 #include "RecordGenerator.hpp"
+
 #include <iostream>
 
-std::unique_ptr<Person> RecordGenerator::generateRandomRecord() const noexcept {
+std::unique_ptr<Person>
+RecordGenerator::generateRandomRecord() const noexcept
+{
   std::random_device rd;
   std::mt19937 rng(rd());
   std::uniform_int_distribution<> distrib(0, 1);
@@ -13,37 +16,48 @@ std::unique_ptr<Person> RecordGenerator::generateRandomRecord() const noexcept {
   std::string tempSurname;
 
   switch (maleOrFemale) {
-  case 0:
-    tempSex = Sex::male;
-    tempName = generateRandomMaleName();
-    tempSurname = generateRandomMaleSurname();
-    break;
+    case 0:
+      tempSex = Sex::male;
+      tempName = generateRandomMaleName();
+      tempSurname = generateRandomMaleSurname();
+      break;
 
-  case 1:
-    tempSex = Sex::female;
-    tempName = generateRandomFemaleName();
-    tempSurname = generateRandomFemaleSurname();
-    break;
+    case 1:
+      tempSex = Sex::female;
+      tempName = generateRandomFemaleName();
+      tempSurname = generateRandomFemaleSurname();
+      break;
   }
 
   std::unique_ptr<Person> tempPtr;
   switch (studentOrEmployee) {
-  case 0:
-    tempPtr = std::make_unique<Student>(Student{
-        tempName, tempSurname, generateRandomAdress(), generateRandomIndex(),
-        generateRandomPESEL(tempSex), tempSex, Position::Student});
-    break;
+    case 0:
+      tempPtr = std::make_unique<Student>(Student{ tempName,
+                                                   tempSurname,
+                                                   generateRandomAdress(),
+                                                   generateRandomIndex(),
+                                                   generateRandomPESEL(tempSex),
+                                                   tempSex,
+                                                   Position::Student });
+      break;
 
-  case 1:
-    tempPtr = std::make_unique<Employee>(Employee{
-        tempName, tempSurname, generateRandomAdress(), generateRandomSalary(),
-        generateRandomPESEL(tempSex), tempSex, Position::Employee});
-    break;
+    case 1:
+      tempPtr =
+        std::make_unique<Employee>(Employee{ tempName,
+                                             tempSurname,
+                                             generateRandomAdress(),
+                                             generateRandomSalary(),
+                                             generateRandomPESEL(tempSex),
+                                             tempSex,
+                                             Position::Employee });
+      break;
   }
   return tempPtr;
 }
 
-std::string RecordGenerator::generateRandomMaleName() const noexcept {
+std::string
+RecordGenerator::generateRandomMaleName() const noexcept
+{
   std::ifstream file("../src/content/maleNames.json");
   if (!file) {
     std::cout << "File was not opened properly \n Program will be closed"
@@ -58,7 +72,9 @@ std::string RecordGenerator::generateRandomMaleName() const noexcept {
   return data.at(distrib(rng));
 }
 
-std::string RecordGenerator::generateRandomFemaleName() const noexcept {
+std::string
+RecordGenerator::generateRandomFemaleName() const noexcept
+{
   std::ifstream file("../src/content/femaleNames.json");
   if (!file) {
     std::cout << "File was not opened properly \n Program will be closed"
@@ -73,7 +89,9 @@ std::string RecordGenerator::generateRandomFemaleName() const noexcept {
   return data.at(distrib(rng));
 }
 
-std::string RecordGenerator::generateRandomMaleSurname() const noexcept {
+std::string
+RecordGenerator::generateRandomMaleSurname() const noexcept
+{
   std::ifstream file("../src/content/maleSurnames.json");
   if (!file) {
     std::cout << "File was not opened properly \n Program will be closed"
@@ -88,7 +106,9 @@ std::string RecordGenerator::generateRandomMaleSurname() const noexcept {
   return data.at(distrib(rng));
 }
 
-std::string RecordGenerator::generateRandomFemaleSurname() const noexcept {
+std::string
+RecordGenerator::generateRandomFemaleSurname() const noexcept
+{
   std::ifstream file("../src/content/femaleSurnames.json");
   if (!file) {
     std::cout << "File was not opened properly \n Program will be closed"
@@ -103,7 +123,9 @@ std::string RecordGenerator::generateRandomFemaleSurname() const noexcept {
   return data.at(distrib(rng));
 }
 
-std::string RecordGenerator::generateRandomAdress() const noexcept {
+std::string
+RecordGenerator::generateRandomAdress() const noexcept
+{
   std::ifstream file("../src/content/adresses.json");
   if (!file) {
     std::cout << "File was not opened properly \n Program will be closed"
@@ -118,14 +140,18 @@ std::string RecordGenerator::generateRandomAdress() const noexcept {
   return data.at(distrib(rng));
 }
 
-int RecordGenerator::generateRandomIndex() const noexcept {
+int
+RecordGenerator::generateRandomIndex() const noexcept
+{
   std::random_device rd;
   std::mt19937 rng(rd());
   std::uniform_int_distribution<> distrib(minIndex, maxIndex);
   return distrib(rng);
 }
 
-float RecordGenerator::generateRandomSalary() const noexcept {
+float
+RecordGenerator::generateRandomSalary() const noexcept
+{
   std::random_device rd;
   std::mt19937 rng(rd());
   std::uniform_int_distribution<> distrib(minSalary, maxSalary);
@@ -133,7 +159,8 @@ float RecordGenerator::generateRandomSalary() const noexcept {
 }
 
 std::string
-RecordGenerator::generateRandomPESEL(const Sex &sex) const noexcept {
+RecordGenerator::generateRandomPESEL(const Sex& sex) const noexcept
+{
   std::string tempPESEL;
   tempPESEL = generatePESELDate(tempPESEL);          // Date
   tempPESEL = generatePESELSex(tempPESEL, sex);      // Sex
@@ -142,7 +169,8 @@ RecordGenerator::generateRandomPESEL(const Sex &sex) const noexcept {
 }
 
 std::string
-RecordGenerator::generatePESELDate(std::string &tempPESEL) const noexcept {
+RecordGenerator::generatePESELDate(std::string& tempPESEL) const noexcept
+{
   std::random_device rd;
   std::mt19937 rng(rd());
 
@@ -202,8 +230,10 @@ RecordGenerator::generatePESELDate(std::string &tempPESEL) const noexcept {
   return tempPESEL;
 }
 
-std::string RecordGenerator::generatePESELSex(std::string &tempPESEL,
-                                              const Sex &sex) const noexcept {
+std::string
+RecordGenerator::generatePESELSex(std::string& tempPESEL,
+                                  const Sex& sex) const noexcept
+{
   std::random_device rd;
   std::mt19937 rng(rd());
   std::uniform_int_distribution<> distrib(0, 9);
@@ -214,32 +244,36 @@ std::string RecordGenerator::generatePESELSex(std::string &tempPESEL,
   distrib = std::uniform_int_distribution<>(0, 9);
   int number = distrib(rng);
   switch (sex) {
-  case Sex::male:
-    while (number % 2 == 0) {
-      number = distrib(rng);
-    }
-    tempPESEL += std::to_string(number);
-    break;
+    case Sex::male:
+      while (number % 2 == 0) {
+        number = distrib(rng);
+      }
+      tempPESEL += std::to_string(number);
+      break;
 
-  case Sex::female:
-    while (number % 2 != 0) {
-      number = distrib(rng);
-    }
-    tempPESEL += std::to_string(number);
-    break;
+    case Sex::female:
+      while (number % 2 != 0) {
+        number = distrib(rng);
+      }
+      tempPESEL += std::to_string(number);
+      break;
   }
   return tempPESEL;
 }
 
-std::string RecordGenerator::generatePESELControlNumber(
-    std::string &tempPESEL) const noexcept {
-  std::vector<int> weights{1, 3, 7, 9, 1, 3, 7, 9, 1, 3};
-  std::transform(begin(weights), end(weights), begin(tempPESEL), begin(weights),
-                 [](auto weight, auto PESELNumber) {
-                   return weight * (PESELNumber - '0');
-                 });
+std::string
+RecordGenerator::generatePESELControlNumber(
+  std::string& tempPESEL) const noexcept
+{
+  std::vector<int> weights{ 1, 3, 7, 9, 1, 3, 7, 9, 1, 3 };
+  std::transform(
+    begin(weights),
+    end(weights),
+    begin(tempPESEL),
+    begin(weights),
+    [](auto weight, auto PESELNumber) { return weight * (PESELNumber - '0'); });
   std::string tempStr =
-      std::to_string(std::accumulate(begin(weights), end(weights), 0));
+    std::to_string(std::accumulate(begin(weights), end(weights), 0));
   int controlNumber = 10 - (tempStr.back() - '0');
   if (controlNumber == 10) {
     controlNumber = 0;

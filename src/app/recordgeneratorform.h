@@ -1,8 +1,9 @@
 #ifndef RECORDGENERATORFORM_H
 #define RECORDGENERATORFORM_H
 
-#include "informationform.h"
 #include <QDialog>
+
+#include "informationform.h"
 
 class MainWindow;
 
@@ -10,14 +11,15 @@ namespace Ui {
 class RecordGeneratorForm;
 }
 
-class RecordGeneratorForm : public QDialog {
+class RecordGeneratorForm : public QDialog
+{
   Q_OBJECT
 
 public:
-  explicit RecordGeneratorForm(QWidget *parent = nullptr);
+  explicit RecordGeneratorForm(QWidget* parent = nullptr);
   ~RecordGeneratorForm();
 
-  void setPtrToMainWindow(MainWindow *ptrToMainWindow);
+  void setPtrToMainWindow(MainWindow* ptrToMainWindow);
 
 private slots:
   void on_generate_records_pushButton_clicked();
@@ -25,7 +27,7 @@ private slots:
 
 private:
   std::unique_ptr<Ui::RecordGeneratorForm> ui;
-  MainWindow *ptrToMainWindow_;
+  MainWindow* ptrToMainWindow_;
   std::unique_ptr<InformationForm> ptrToInformationForm_;
 };
 

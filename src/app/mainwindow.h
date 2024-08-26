@@ -1,6 +1,8 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <QMainWindow>
+
 #include "Database.hpp"
 #include "addrecordform.h"
 #include "findrecordbypeselform.h"
@@ -15,20 +17,19 @@
 #include "sortrecordsbysurnameform.h"
 #include "validatepeselform.h"
 
-#include <QMainWindow>
-
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
 }
 QT_END_NAMESPACE
 
-class MainWindow : public QMainWindow {
+class MainWindow : public QMainWindow
+{
   Q_OBJECT
 
 public:
   MainWindow(std::shared_ptr<Database> ptrToDatabase,
-             QWidget *parent = nullptr);
+             QWidget* parent = nullptr);
   ~MainWindow();
 
   std::shared_ptr<Database> getPtrToDatabase();
@@ -70,11 +71,14 @@ private:
   std::unique_ptr<ShowAllForm> ptrToShowAllForm_;
   std::unique_ptr<FindRecordByPeselForm> ptrToFindRecordByPeselForm_;
   std::unique_ptr<FindRecordBySurnameForm> ptrToFindRecordBySurnameForm_;
-  std::unique_ptr<SortEmployeesRecordsBySalaryForm> ptrToSortEmployeedRecordsBySalaryForm_;
+  std::unique_ptr<SortEmployeesRecordsBySalaryForm>
+    ptrToSortEmployeedRecordsBySalaryForm_;
   std::unique_ptr<SortRecordsByPeselForm> ptrToSortRecordsByPeselForm_;
   std::unique_ptr<SortRecordsBySurnameForm> ptrToSortRecordsBySurnameForm_;
-  std::unique_ptr<RemoveStudentRecordByIndexForm> ptrToRemoveStudentRecordByIndexForm_;
-  std::unique_ptr<ModifySalaryInEmployeeRecordForm> ptrToModifySalaryInEmployeeRecordForm_;
+  std::unique_ptr<RemoveStudentRecordByIndexForm>
+    ptrToRemoveStudentRecordByIndexForm_;
+  std::unique_ptr<ModifySalaryInEmployeeRecordForm>
+    ptrToModifySalaryInEmployeeRecordForm_;
   std::unique_ptr<ValidatePeselForm> ptrToValidatePeselForm_;
   std::unique_ptr<RecordGeneratorForm> ptrToRGeneratorForm_;
   std::unique_ptr<InformationForm> ptrToInformationForm_;

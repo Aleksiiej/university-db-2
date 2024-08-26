@@ -1,36 +1,40 @@
-#include "mainwindow.h"
 #include "removestudentrecordbyindexform.h"
+
+#include "mainwindow.h"
 #include "ui_removestudentrecordbyindexform.h"
 
-RemoveStudentRecordByIndexForm::RemoveStudentRecordByIndexForm(QWidget *parent)
-    : QDialog(parent), ui(new Ui::RemoveStudentRecordByIndexForm) {
+RemoveStudentRecordByIndexForm::RemoveStudentRecordByIndexForm(QWidget* parent)
+  : QDialog(parent)
+  , ui(new Ui::RemoveStudentRecordByIndexForm)
+{
   ui->setupUi(this);
 }
 
-RemoveStudentRecordByIndexForm::~RemoveStudentRecordByIndexForm() { delete ui; }
+RemoveStudentRecordByIndexForm::~RemoveStudentRecordByIndexForm()
+{
+  delete ui;
+}
 
-void RemoveStudentRecordByIndexForm::setPtrToMainWindow(MainWindow *ptrToMainWindow)
+void
+RemoveStudentRecordByIndexForm::setPtrToMainWindow(MainWindow* ptrToMainWindow)
 {
   ptrToMainWindow_ = ptrToMainWindow;
 }
 
-void RemoveStudentRecordByIndexForm::on_pushButton_clicked()
+void
+RemoveStudentRecordByIndexForm::on_pushButton_clicked()
 {
   close();
 }
 
-
-void RemoveStudentRecordByIndexForm::on_pushButton_2_clicked()
+void
+RemoveStudentRecordByIndexForm::on_pushButton_2_clicked()
 {
-  int index = ui->lineEdit->text().replace(" ","").toInt();
-  if(ptrToMainWindow_->getPtrToDatabase()->checkIfGivenIndexExist(index))
-  {
+  int index = ui->lineEdit->text().replace(" ", "").toInt();
+  if (ptrToMainWindow_->getPtrToDatabase()->checkIfGivenIndexExist(index)) {
     ptrToMainWindow_->getPtrToDatabase()->removeByIndex(index);
     ui->label->setText("Record removed");
-  }
-  else
-  {
+  } else {
     ui->label->setText("No record with given index");
   }
 }
-

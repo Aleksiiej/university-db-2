@@ -7,18 +7,19 @@ namespace Ui {
 class SortRecordsBySurnameForm;
 }
 
-class SortRecordsBySurnameForm : public QDialog {
+class SortRecordsBySurnameForm : public QDialog
+{
   Q_OBJECT
 
 public:
-  explicit SortRecordsBySurnameForm(QWidget *parent = nullptr);
+  explicit SortRecordsBySurnameForm(QWidget* parent = nullptr);
   ~SortRecordsBySurnameForm();
 
 private slots:
   void on_pushButton_clicked();
 
 private:
-  Ui::SortRecordsBySurnameForm *ui;
+  Ui::SortRecordsBySurnameForm* ui;
 };
 
 #endif // SORTRECORDSBYSURNAMEFORM_H
