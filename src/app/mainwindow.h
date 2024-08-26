@@ -13,6 +13,7 @@
 #include "sortemployeesrecordsbysalaryform.h"
 #include "sortrecordsbypeselform.h"
 #include "sortrecordsbysurnameform.h"
+#include "validatepeselform.h"
 
 #include <QMainWindow>
 
@@ -74,6 +75,7 @@ private:
   std::unique_ptr<SortRecordsBySurnameForm> ptrToSortRecordsBySurnameForm_;
   std::unique_ptr<RemoveStudentRecordByIndexForm> ptrToRemoveStudentRecordByIndexForm_;
   std::unique_ptr<ModifySalaryInEmployeeRecordForm> ptrToModifySalaryInEmployeeRecordForm_;
+  std::unique_ptr<ValidatePeselForm> ptrToValidatePeselForm_;
   std::unique_ptr<RecordGeneratorForm> ptrToRGeneratorForm_;
   std::unique_ptr<InformationForm> ptrToInformationForm_;
 };

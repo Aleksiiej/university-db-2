@@ -68,7 +68,11 @@ void MainWindow::on_pushButton_9_clicked() {
   ptrToModifySalaryInEmployeeRecordForm_->show();
 }
 
-void MainWindow::on_pushButton_10_clicked() {}
+void MainWindow::on_pushButton_10_clicked() {
+  ptrToValidatePeselForm_ = std::make_unique<ValidatePeselForm>();
+  ptrToValidatePeselForm_->setPtrToMainWindow(this);
+  ptrToValidatePeselForm_->show();
+}
 ;
 void MainWindow::on_pushButton_11_clicked() {
   getPtrToDatabase()->loadToJson();
