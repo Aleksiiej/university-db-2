@@ -26,7 +26,7 @@ class RemoveStudentRecordByIndexForm : public QDialog
     void on_pushButton_2_clicked();
 
   private:
-    Ui::RemoveStudentRecordByIndexForm *ui;
+    std::unique_ptr<Ui::RemoveStudentRecordByIndexForm> ui;
     MainWindow *ptrToMainWindow_;
 };
 

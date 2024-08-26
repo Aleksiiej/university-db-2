@@ -26,7 +26,7 @@ class FindRecordByPeselForm : public QDialog
     void on_pushButton_2_clicked();
 
   private:
-    Ui::FindRecordByPeselForm *ui;
+    std::unique_ptr<Ui::FindRecordByPeselForm> ui;
     MainWindow *ptrToMainWindow_;
 };
 

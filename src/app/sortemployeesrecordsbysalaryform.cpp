@@ -1,17 +1,15 @@
-#include "sortemployeesrecordsbysalaryform.h"
-
 #include "mainwindow.h"
+#include "sortemployeesrecordsbysalaryform.h"
 #include "ui_sortemployeesrecordsbysalaryform.h"
 
 SortEmployeesRecordsBySalaryForm::SortEmployeesRecordsBySalaryForm(QWidget *parent)
-    : QDialog(parent), ui(new Ui::SortEmployeesRecordsBySalaryForm)
+    : QDialog(parent), ui(std::make_unique<Ui::SortEmployeesRecordsBySalaryForm>())
 {
     ui->setupUi(this);
 }
 
 SortEmployeesRecordsBySalaryForm::~SortEmployeesRecordsBySalaryForm()
 {
-    delete ui;
 }
 
 void SortEmployeesRecordsBySalaryForm::appendTextToLabel(const QString &text)

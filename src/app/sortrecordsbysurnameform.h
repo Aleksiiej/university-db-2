@@ -20,7 +20,7 @@ class SortRecordsBySurnameForm : public QDialog
     void on_pushButton_clicked();
 
   private:
-    Ui::SortRecordsBySurnameForm *ui;
+    std::unique_ptr<Ui::SortRecordsBySurnameForm> ui;
 };
 
 #endif // SORTRECORDSBYSURNAMEFORM_H

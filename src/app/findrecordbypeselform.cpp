@@ -1,16 +1,14 @@
 #include "findrecordbypeselform.h"
-
 #include "mainwindow.h"
 #include "ui_findrecordbypeselform.h"
 
-FindRecordByPeselForm::FindRecordByPeselForm(QWidget *parent) : QDialog(parent), ui(new Ui::FindRecordByPeselForm)
+FindRecordByPeselForm::FindRecordByPeselForm(QWidget *parent) : QDialog(parent), ui(std::make_unique<Ui::FindRecordByPeselForm>())
 {
     ui->setupUi(this);
 }
 
 FindRecordByPeselForm::~FindRecordByPeselForm()
 {
-    delete ui;
 }
 
 void FindRecordByPeselForm::appendTextToLabel(const QString &text)

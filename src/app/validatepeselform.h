@@ -28,7 +28,7 @@ class ValidatePeselForm : public QDialog
     void on_pushButton_2_clicked();
 
   private:
-    Ui::ValidatePeselForm *ui;
+    std::unique_ptr<Ui::ValidatePeselForm> ui;
     MainWindow *ptrToMainWindow_;
     std::unique_ptr<PESELValidator> PESELValidatorPtr_;
 };

@@ -20,7 +20,7 @@ class SortRecordsByPeselForm : public QDialog
     void on_pushButton_clicked();
 
   private:
-    Ui::SortRecordsByPeselForm *ui;
+    std::unique_ptr<Ui::SortRecordsByPeselForm> ui;
 };
 
 #endif // SORTRECORDSBYPESELFORM_H

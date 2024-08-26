@@ -25,7 +25,7 @@ class SortEmployeesRecordsBySalaryForm : public QDialog
     void on_pushButton_clicked();
 
   private:
-    Ui::SortEmployeesRecordsBySalaryForm *ui;
+    std::unique_ptr<Ui::SortEmployeesRecordsBySalaryForm> ui;
     MainWindow *ptrToMainWindow_;
 };
 

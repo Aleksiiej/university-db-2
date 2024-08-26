@@ -24,7 +24,7 @@ class ModifySalaryInEmployeeRecordForm : public QDialog
     void on_pushButton_clicked();
 
   private:
-    Ui::ModifySalaryInEmployeeRecordForm *ui;
+    std::unique_ptr<Ui::ModifySalaryInEmployeeRecordForm> ui;
     MainWindow *ptrToMainWindow_;
 };
 

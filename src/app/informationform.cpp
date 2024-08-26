@@ -1,15 +1,13 @@
 #include "informationform.h"
-
 #include "ui_informationform.h"
 
-InformationForm::InformationForm(QWidget *parent) : QDialog(parent), ui(new Ui::InformationForm)
+InformationForm::InformationForm(QWidget *parent) : QDialog(parent), ui(std::make_unique<Ui::InformationForm>())
 {
     ui->setupUi(this);
 }
 
 InformationForm::~InformationForm()
 {
-    delete ui;
 }
 
 void InformationForm::setRecordCreationSuccesText()

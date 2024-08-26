@@ -1,10 +1,9 @@
-#include "modifysalaryinemployeerecordform.h"
-
 #include "mainwindow.h"
+#include "modifysalaryinemployeerecordform.h"
 #include "ui_modifysalaryinemployeerecordform.h"
 
 ModifySalaryInEmployeeRecordForm::ModifySalaryInEmployeeRecordForm(QWidget *parent)
-    : QDialog(parent), ui(new Ui::ModifySalaryInEmployeeRecordForm)
+    : QDialog(parent), ui(std::make_unique<Ui::ModifySalaryInEmployeeRecordForm>())
 {
     ui->setupUi(this);
 }
@@ -16,7 +15,6 @@ void ModifySalaryInEmployeeRecordForm::setPtrToMainWindow(MainWindow *ptrToMainW
 
 ModifySalaryInEmployeeRecordForm::~ModifySalaryInEmployeeRecordForm()
 {
-    delete ui;
 }
 
 void ModifySalaryInEmployeeRecordForm::on_pushButton_clicked()

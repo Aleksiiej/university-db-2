@@ -1,17 +1,15 @@
-#include "removestudentrecordbyindexform.h"
-
 #include "mainwindow.h"
+#include "removestudentrecordbyindexform.h"
 #include "ui_removestudentrecordbyindexform.h"
 
 RemoveStudentRecordByIndexForm::RemoveStudentRecordByIndexForm(QWidget *parent)
-    : QDialog(parent), ui(new Ui::RemoveStudentRecordByIndexForm)
+    : QDialog(parent), ui(std::make_unique<Ui::RemoveStudentRecordByIndexForm>())
 {
     ui->setupUi(this);
 }
 
 RemoveStudentRecordByIndexForm::~RemoveStudentRecordByIndexForm()
 {
-    delete ui;
 }
 
 void RemoveStudentRecordByIndexForm::setPtrToMainWindow(MainWindow *ptrToMainWindow)

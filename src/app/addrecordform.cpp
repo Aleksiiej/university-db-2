@@ -1,5 +1,4 @@
 #include "addrecordform.h"
-
 #include "mainwindow.h"
 #include "ui_addrecordform.h"
 
@@ -50,14 +49,6 @@ void AddRecordForm::on_pushButton_addrecord_clicked()
     }
     else
         ui->label_invalidpesel->setHidden(false);
-
-    qDebug() << "Name " << name;
-    qDebug() << "Surname " << surname;
-    qDebug() << "Address " << address;
-    qDebug() << "Position" << static_cast<int>(position);
-    qDebug() << "StudentEmployeeValue " << studentEmployeeValue;
-    qDebug() << "PESEL " << pesel;
-    qDebug() << "Sex " << static_cast<int>(sex);
 
     if (position == Position::Student)
     {

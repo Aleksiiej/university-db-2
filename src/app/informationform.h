@@ -25,7 +25,7 @@ class InformationForm : public QDialog
     void on_pushButton_clicked();
 
   private:
-    Ui::InformationForm *ui;
+    std::unique_ptr<Ui::InformationForm> ui;
 };
 
 #endif // INFORMATIONFORM_H

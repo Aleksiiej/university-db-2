@@ -1,16 +1,14 @@
 #include "sortrecordsbysurnameform.h"
-
 #include "ui_sortrecordsbysurnameform.h"
 
 SortRecordsBySurnameForm::SortRecordsBySurnameForm(QWidget *parent)
-    : QDialog(parent), ui(new Ui::SortRecordsBySurnameForm)
+    : QDialog(parent), ui(std::make_unique<Ui::SortRecordsBySurnameForm>())
 {
     ui->setupUi(this);
 }
 
 SortRecordsBySurnameForm::~SortRecordsBySurnameForm()
 {
-    delete ui;
 }
 
 void SortRecordsBySurnameForm::on_pushButton_clicked()
