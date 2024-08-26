@@ -1,7 +1,5 @@
 #include "Database.hpp"
 
-#include <iostream>
-
 void Database::addStudent(const std::string &name, const std::string &surname, const std::string &adress,
                           const int &index, const std::string &PESEL, const Sex &sex, const Position &position) noexcept
 {
@@ -13,33 +11,6 @@ void Database::addEmployee(const std::string &name, const std::string &surname, 
                            const Position &position) noexcept
 {
     database_.push_back(std::make_shared<Employee>(Employee{name, surname, adress, salary, PESEL, sex, position}));
-}
-
-void Database::show() const noexcept
-{
-    system("clear");
-    std::for_each(begin(database_), end(database_), [this](const auto ptr) { printByPtr(ptr); });
-}
-
-void Database::printByPtr(const std::shared_ptr<Person> ptr) const noexcept
-{
-    std::cout << "===================================" << std::endl;
-    std::cout << "Name: " << ptr->getName() << std::endl;
-    std::cout << "Surname: " << ptr->getSurname() << std::endl;
-    std::cout << "Adress: " << ptr->getAddress() << std::endl;
-    std::cout << "Position: " << ptr->positionPrint[ptr->getPosition()] << std::endl;
-    switch (ptr->getPosition())
-    {
-    case Position::Student:
-        std::cout << "Index: " << ptr->getIndex() << std::endl;
-        break;
-    case Position::Employee:
-        std::cout << "Salary: " << std::fixed << std::setprecision(2) << ptr->getSalary() << std::endl;
-        break;
-    }
-    std::cout << "PESEL: " << ptr->getPESEL() << std::endl;
-    std::cout << "Sex: " << ptr->sexPrint[ptr->getSex()] << std::endl;
-    std::cout << "===================================" << std::endl;
 }
 
 std::string Database::returnRecordsAsString()
@@ -84,6 +55,7 @@ std::string Database::returnRecordsWithGivenSurname(std::string surname)
         {
             sstream << "Name: " << el->getName() << std::endl;
             sstream << "Surname: " << el->getSurname() << std::endl;
+            sstream << "PESEL: " << el->getPESEL() << std::endl;
             if (static_cast<bool>(el->getSex()))
             {
                 sstream << "Sex: female" << std::endl;
@@ -119,6 +91,7 @@ std::string Database::returnRecordWithGivenPesel(std::string pesel)
         {
             sstream << "Name: " << el->getName() << std::endl;
             sstream << "Surname: " << el->getSurname() << std::endl;
+            sstream << "PESEL: " << el->getPESEL() << std::endl;
             if (static_cast<bool>(el->getSex()))
             {
                 sstream << "Sex: female" << std::endl;
@@ -144,34 +117,6 @@ std::string Database::returnRecordWithGivenPesel(std::string pesel)
         return sstream.str();
     }
     return std::string{};
-}
-
-void Database::showBySurname(const std::string &surname) const noexcept
-{
-    system("clear");
-    auto tempVec = findBySurname(surname);
-    if (tempVec.size() == 0)
-    {
-        std::cout << "No records with given surname found" << std::endl;
-    }
-    else
-    {
-        std::for_each(begin(tempVec), end(tempVec), [this](const auto ptr) { printByPtr(ptr); });
-    }
-}
-
-void Database::showByPESEL(const std::string &PESEL) const noexcept
-{
-    system("clear");
-    auto ptr = findByPESEL(PESEL);
-    if (ptr == nullptr)
-    {
-        std::cout << "No records with given PESEL found" << std::endl;
-    }
-    else
-    {
-        printByPtr(ptr);
-    }
 }
 
 std::vector<std::shared_ptr<Person>> Database::findBySurname(const std::string &surname) const noexcept
@@ -267,7 +212,6 @@ bool Database::removeByIndex(const int &index) noexcept
 {
     if (database_.size() == 0)
     {
-        std::cout << "No records in database" << std::endl;
         return false;
     }
     database_.erase(

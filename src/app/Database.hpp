@@ -12,13 +12,9 @@ public:
                    const std::string &adress, const float &salary,
                    const std::string &PESEL, const Sex &sex,
                    const Position &position) noexcept;
-  void show() const noexcept;
-  void printByPtr(const std::shared_ptr<Person> ptr) const noexcept;
   std::string returnRecordsAsString();
   std::string returnRecordsWithGivenSurname(std::string surname);
   std::string returnRecordWithGivenPesel(std::string pesel);
-  void showBySurname(const std::string &surname) const noexcept;
-  void showByPESEL(const std::string &PESEL) const noexcept;
   std::vector<std::shared_ptr<Person>>
   findBySurname(const std::string &surname) const noexcept;
   std::shared_ptr<Person> findByPESEL(const std::string &PESEL) const noexcept;
