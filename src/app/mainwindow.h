@@ -29,10 +29,10 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
   public:
-    MainWindow(std::shared_ptr<Database> ptrToDatabase, QWidget *parent = nullptr);
+    MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    std::shared_ptr<Database> getPtrToDatabase();
+    std::shared_ptr<Database>& getPtrToDatabase();
 
   private slots:
     void on_pushButton_clicked();
@@ -66,7 +66,6 @@ class MainWindow : public QMainWindow
   private:
     std::unique_ptr<Ui::MainWindow> ui;
     std::shared_ptr<Database> ptrToDatabase_;
-    std::shared_ptr<RecordGenerator> ptrToRGenerator_;
     std::unique_ptr<AddRecordForm> ptrToAddRecordForm_;
     std::unique_ptr<ShowAllForm> ptrToShowAllForm_;
     std::unique_ptr<FindRecordByPeselForm> ptrToFindRecordByPeselForm_;
@@ -77,7 +76,7 @@ class MainWindow : public QMainWindow
     std::unique_ptr<RemoveStudentRecordByIndexForm> ptrToRemoveStudentRecordByIndexForm_;
     std::unique_ptr<ModifySalaryInEmployeeRecordForm> ptrToModifySalaryInEmployeeRecordForm_;
     std::unique_ptr<ValidatePeselForm> ptrToValidatePeselForm_;
-    std::unique_ptr<RecordGeneratorForm> ptrToRGeneratorForm_;
+    std::unique_ptr<RecordGeneratorForm> ptrToRecordGeneratorForm_;
     std::unique_ptr<InformationForm> ptrToInformationForm_;
 };
 #endif // MAINWINDOW_H
