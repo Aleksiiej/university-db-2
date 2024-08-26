@@ -54,11 +54,11 @@ std::string Database::returnRecordWithGivenPesel(std::string pesel)
 std::vector<std::shared_ptr<Person>> Database::findBySurname(const std::string &surname) const noexcept
 {
     std::vector<std::shared_ptr<Person>> tempVec;
-    for (const auto &el : database_)
+    for (const auto &record : database_)
     {
-        if (el->getSurname() == surname)
+        if (record->getSurname() == surname)
         {
-            auto tempPtr = el;
+            auto tempPtr = record;
             tempVec.push_back(tempPtr);
         }
     }
@@ -68,7 +68,7 @@ std::vector<std::shared_ptr<Person>> Database::findBySurname(const std::string &
 std::shared_ptr<Person> Database::findByPESEL(const std::string &PESEL) const noexcept
 {
     auto tempIter =
-        std::find_if(begin(database_), end(database_), [&PESEL](const auto el) { return el->getPESEL() == PESEL; });
+        std::find_if(begin(database_), end(database_), [&PESEL](const auto& record) { return record->getPESEL() == PESEL; });
     if (tempIter != end(database_))
     {
         return *(tempIter);
@@ -82,17 +82,17 @@ std::shared_ptr<Person> Database::findByPESEL(const std::string &PESEL) const no
 void Database::sortBySurname() noexcept
 {
     std::sort(begin(database_), end(database_),
-              [](auto lhs, auto rhs) { return lhs->getSurname() < rhs->getSurname(); });
+              [](const auto& lhs, const auto& rhs) { return lhs->getSurname() < rhs->getSurname(); });
 }
 
 void Database::sortByPESEL() noexcept
 {
-    std::sort(begin(database_), end(database_), [](auto lhs, auto rhs) { return lhs->getPESEL() < rhs->getPESEL(); });
+    std::sort(begin(database_), end(database_), [](const auto& lhs, const auto& rhs) { return lhs->getPESEL() < rhs->getPESEL(); });
 }
 
 void Database::sortBySalary() noexcept
 {
-    std::sort(begin(database_), end(database_), [](auto lhs, auto rhs) { return lhs->getSalary() < rhs->getSalary(); });
+    std::sort(begin(database_), end(database_), [](const auto& lhs, const auto& rhs) { return lhs->getSalary() < rhs->getSalary(); });
 }
 
 std::string Database::returnEmployeesSortedBySalary()
@@ -105,7 +105,7 @@ std::string Database::returnEmployeesSortedBySalary()
             ret.push_back(record);
         }
     }
-    std::sort(begin(ret), end(ret), [](auto lhs, auto rhs) { return lhs->getSalary() < rhs->getSalary(); });
+    std::sort(begin(ret), end(ret), [](const auto& lhs, const auto& rhs) { return lhs->getSalary() < rhs->getSalary(); });
     std::stringstream sstream;
     for (const auto &record : ret)
     {
@@ -133,14 +133,14 @@ bool Database::removeByIndex(const int &index) noexcept
         return false;
     }
     database_.erase(
-        std::find_if(begin(database_), end(database_), [&index](const auto el) { return el->getIndex() == index; }));
+        std::find_if(begin(database_), end(database_), [&](const auto& record) { return record->getIndex() == index; }));
     return true;
 }
 
 bool Database::modifySalary(const std::string &PESEL, const float &newSalary) noexcept
 {
     std::shared_ptr<Person> tempPtr = findByPESEL(PESEL);
-    if (tempPtr != nullptr && tempPtr->getPosition() == Position::Employee)
+    if (tempPtr != nullptr and tempPtr->getPosition() == Position::Employee)
     {
         tempPtr->setSalary(newSalary);
         return true;
