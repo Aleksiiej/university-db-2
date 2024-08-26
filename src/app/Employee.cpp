@@ -1,50 +1,41 @@
 #include "Employee.hpp"
 
 // getters
-std::string
-Employee::getName() const noexcept
+std::string Employee::getName() const noexcept
 {
-  return name_;
+    return name_;
 }
-std::string
-Employee::getSurname() const noexcept
+std::string Employee::getSurname() const noexcept
 {
-  return surname_;
+    return surname_;
 }
-std::string
-Employee::getAddress() const noexcept
+std::string Employee::getAddress() const noexcept
 {
-  return adress_;
+    return adress_;
 }
-Position
-Employee::getPosition() const noexcept
+Position Employee::getPosition() const noexcept
 {
-  return position_;
+    return position_;
 }
-int
-Employee::getIndex() const noexcept
+int Employee::getIndex() const noexcept
 {
-  return 0;
+    return 0;
 }
-float
-Employee::getSalary() const noexcept
+float Employee::getSalary() const noexcept
 {
-  return salary_;
+    return salary_;
 }
-std::string
-Employee::getPESEL() const noexcept
+std::string Employee::getPESEL() const noexcept
 {
-  return PESEL_;
+    return PESEL_;
 }
-Sex
-Employee::getSex() const noexcept
+Sex Employee::getSex() const noexcept
 {
-  return sex_;
+    return sex_;
 }
 
 // setters
-void
-Employee::setSalary(const float& salary) noexcept
+void Employee::setSalary(const float &salary) noexcept
 {
-  salary_ = salary;
+    salary_ = salary;
 }

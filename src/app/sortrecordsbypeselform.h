@@ -3,23 +3,24 @@
 
 #include <QDialog>
 
-namespace Ui {
+namespace Ui
+{
 class SortRecordsByPeselForm;
 }
 
 class SortRecordsByPeselForm : public QDialog
 {
-  Q_OBJECT
+    Q_OBJECT
 
-public:
-  explicit SortRecordsByPeselForm(QWidget* parent = nullptr);
-  ~SortRecordsByPeselForm();
+  public:
+    explicit SortRecordsByPeselForm(QWidget *parent = nullptr);
+    ~SortRecordsByPeselForm();
 
-private slots:
-  void on_pushButton_clicked();
+  private slots:
+    void on_pushButton_clicked();
 
-private:
-  Ui::SortRecordsByPeselForm* ui;
+  private:
+    Ui::SortRecordsByPeselForm *ui;
 };
 
 #endif // SORTRECORDSBYPESELFORM_H

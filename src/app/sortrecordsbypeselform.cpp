@@ -2,20 +2,17 @@
 
 #include "ui_sortrecordsbypeselform.h"
 
-SortRecordsByPeselForm::SortRecordsByPeselForm(QWidget* parent)
-  : QDialog(parent)
-  , ui(new Ui::SortRecordsByPeselForm)
+SortRecordsByPeselForm::SortRecordsByPeselForm(QWidget *parent) : QDialog(parent), ui(new Ui::SortRecordsByPeselForm)
 {
-  ui->setupUi(this);
+    ui->setupUi(this);
 }
 
 SortRecordsByPeselForm::~SortRecordsByPeselForm()
 {
-  delete ui;
+    delete ui;
 }
 
-void
-SortRecordsByPeselForm::on_pushButton_clicked()
+void SortRecordsByPeselForm::on_pushButton_clicked()
 {
-  close();
+    close();
 }

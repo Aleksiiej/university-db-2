@@ -5,28 +5,29 @@
 
 class MainWindow;
 
-namespace Ui {
+namespace Ui
+{
 class ShowAllForm;
 }
 
 class ShowAllForm : public QDialog
 {
-  Q_OBJECT
+    Q_OBJECT
 
-public:
-  explicit ShowAllForm(QWidget* parent = nullptr);
-  ~ShowAllForm();
+  public:
+    explicit ShowAllForm(QWidget *parent = nullptr);
+    ~ShowAllForm();
 
-  void appendTextToLabel(const QString& text);
-  void setPtrToMainWindow(MainWindow* ptrToMainWindow);
+    void appendTextToLabel(const QString &text);
+    void setPtrToMainWindow(MainWindow *ptrToMainWindow);
 
-private slots:
-  void on_pushButton_clicked();
-  void on_pushButton_2_clicked();
+  private slots:
+    void on_pushButton_clicked();
+    void on_pushButton_2_clicked();
 
-private:
-  std::unique_ptr<Ui::ShowAllForm> ui;
-  MainWindow* ptrToMainWindow_;
+  private:
+    std::unique_ptr<Ui::ShowAllForm> ui;
+    MainWindow *ptrToMainWindow_;
 };
 
 #endif // SHOWALLFORM_H

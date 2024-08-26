@@ -3,45 +3,40 @@
 #include "mainwindow.h"
 #include "ui_findrecordbysurnameform.h"
 
-FindRecordBySurnameForm::FindRecordBySurnameForm(QWidget* parent)
-  : QDialog(parent)
-  , ui(new Ui::FindRecordBySurnameForm)
+FindRecordBySurnameForm::FindRecordBySurnameForm(QWidget *parent) : QDialog(parent), ui(new Ui::FindRecordBySurnameForm)
 {
-  ui->setupUi(this);
+    ui->setupUi(this);
 }
 
-FindRecordBySurnameForm::~FindRecordBySurnameForm() {}
-
-void
-FindRecordBySurnameForm::appendTextToLabel(const QString& text)
+FindRecordBySurnameForm::~FindRecordBySurnameForm()
 {
-  QString temp = ui->label->text();
-  temp.append(text + "\n");
-  ui->label->setText(temp);
 }
 
-void
-FindRecordBySurnameForm::setPtrToMainWindow(MainWindow* ptrToMainWindow)
+void FindRecordBySurnameForm::appendTextToLabel(const QString &text)
 {
-  ptrToMainWindow_ = ptrToMainWindow;
+    QString temp = ui->label->text();
+    temp.append(text + "\n");
+    ui->label->setText(temp);
 }
 
-void
-FindRecordBySurnameForm::on_pushButton_clicked()
+void FindRecordBySurnameForm::setPtrToMainWindow(MainWindow *ptrToMainWindow)
 {
-  close();
+    ptrToMainWindow_ = ptrToMainWindow;
 }
 
-void
-FindRecordBySurnameForm::on_pushButton_2_clicked()
+void FindRecordBySurnameForm::on_pushButton_clicked()
 {
-  ui->label->setText("");
-  QString surname = ui->lineEdit->text();
-  std::string records =
-    ptrToMainWindow_->getPtrToDatabase()->returnRecordsWithGivenSurname(
-      surname.toStdString());
-  if (records.empty()) {
-    appendTextToLabel("no records found with the given surname");
-  }
-  appendTextToLabel(QString::fromStdString(records));
+    close();
+}
+
+void FindRecordBySurnameForm::on_pushButton_2_clicked()
+{
+    ui->label->setText("");
+    QString surname = ui->lineEdit->text();
+    std::string records = ptrToMainWindow_->getPtrToDatabase()->returnRecordsWithGivenSurname(surname.toStdString());
+    if (records.empty())
+    {
+        appendTextToLabel("no records found with the given surname");
+    }
+    appendTextToLabel(QString::fromStdString(records));
 }

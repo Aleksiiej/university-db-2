@@ -1,47 +1,38 @@
 #include "Person.hpp"
 
-std::string
-Person::getName() const noexcept
+std::string Person::getName() const noexcept
 {
-  return name_;
+    return name_;
 }
-std::string
-Person::getSurname() const noexcept
+std::string Person::getSurname() const noexcept
 {
-  return surname_;
+    return surname_;
 }
-std::string
-Person::getAddress() const noexcept
+std::string Person::getAddress() const noexcept
 {
-  return adress_;
+    return adress_;
 }
-Position
-Person::getPosition() const noexcept
+Position Person::getPosition() const noexcept
 {
-  return position_;
+    return position_;
 }
-int
-Person::getIndex() const noexcept
+int Person::getIndex() const noexcept
 {
-  return -1;
+    return -1;
 }
-float
-Person::getSalary() const noexcept
+float Person::getSalary() const noexcept
 {
-  return -1;
+    return -1;
 }
-std::string
-Person::getPESEL() const noexcept
+std::string Person::getPESEL() const noexcept
 {
-  return PESEL_;
+    return PESEL_;
 }
-Sex
-Person::getSex() const noexcept
+Sex Person::getSex() const noexcept
 {
-  return sex_;
+    return sex_;
 }
 
-void
-Person::setSalary(const float&) noexcept
+void Person::setSalary(const float &) noexcept
 {
 }

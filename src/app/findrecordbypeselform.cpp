@@ -3,48 +3,41 @@
 #include "mainwindow.h"
 #include "ui_findrecordbypeselform.h"
 
-FindRecordByPeselForm::FindRecordByPeselForm(QWidget* parent)
-  : QDialog(parent)
-  , ui(new Ui::FindRecordByPeselForm)
+FindRecordByPeselForm::FindRecordByPeselForm(QWidget *parent) : QDialog(parent), ui(new Ui::FindRecordByPeselForm)
 {
-  ui->setupUi(this);
+    ui->setupUi(this);
 }
 
 FindRecordByPeselForm::~FindRecordByPeselForm()
 {
-  delete ui;
+    delete ui;
 }
 
-void
-FindRecordByPeselForm::appendTextToLabel(const QString& text)
+void FindRecordByPeselForm::appendTextToLabel(const QString &text)
 {
-  QString temp = ui->label->text();
-  temp.append(text + "\n");
-  ui->label->setText(temp);
+    QString temp = ui->label->text();
+    temp.append(text + "\n");
+    ui->label->setText(temp);
 }
 
-void
-FindRecordByPeselForm::setPtrToMainWindow(MainWindow* ptrToMainWindow)
+void FindRecordByPeselForm::setPtrToMainWindow(MainWindow *ptrToMainWindow)
 {
-  ptrToMainWindow_ = ptrToMainWindow;
+    ptrToMainWindow_ = ptrToMainWindow;
 }
 
-void
-FindRecordByPeselForm::on_pushButton_clicked()
+void FindRecordByPeselForm::on_pushButton_clicked()
 {
-  close();
+    close();
 }
 
-void
-FindRecordByPeselForm::on_pushButton_2_clicked()
+void FindRecordByPeselForm::on_pushButton_2_clicked()
 {
-  ui->label->setText("");
-  QString pesel = ui->lineEdit->text();
-  std::string record =
-    ptrToMainWindow_->getPtrToDatabase()->returnRecordWithGivenPesel(
-      pesel.toStdString());
-  if (record.empty()) {
-    appendTextToLabel("no records found with the given surname");
-  }
-  appendTextToLabel(QString::fromStdString(record));
+    ui->label->setText("");
+    QString pesel = ui->lineEdit->text();
+    std::string record = ptrToMainWindow_->getPtrToDatabase()->returnRecordWithGivenPesel(pesel.toStdString());
+    if (record.empty())
+    {
+        appendTextToLabel("no records found with the given surname");
+    }
+    appendTextToLabel(QString::fromStdString(record));
 }

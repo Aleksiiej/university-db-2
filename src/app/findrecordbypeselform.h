@@ -5,28 +5,29 @@
 
 class MainWindow;
 
-namespace Ui {
+namespace Ui
+{
 class FindRecordByPeselForm;
 }
 
 class FindRecordByPeselForm : public QDialog
 {
-  Q_OBJECT
+    Q_OBJECT
 
-public:
-  explicit FindRecordByPeselForm(QWidget* parent = nullptr);
-  ~FindRecordByPeselForm();
+  public:
+    explicit FindRecordByPeselForm(QWidget *parent = nullptr);
+    ~FindRecordByPeselForm();
 
-  void appendTextToLabel(const QString& text);
-  void setPtrToMainWindow(MainWindow* ptrToMainWindow);
+    void appendTextToLabel(const QString &text);
+    void setPtrToMainWindow(MainWindow *ptrToMainWindow);
 
-private slots:
-  void on_pushButton_clicked();
-  void on_pushButton_2_clicked();
+  private slots:
+    void on_pushButton_clicked();
+    void on_pushButton_2_clicked();
 
-private:
-  Ui::FindRecordByPeselForm* ui;
-  MainWindow* ptrToMainWindow_;
+  private:
+    Ui::FindRecordByPeselForm *ui;
+    MainWindow *ptrToMainWindow_;
 };
 
 #endif // FINDRECORDBYPESELFORM_H

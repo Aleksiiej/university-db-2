@@ -1,47 +1,38 @@
 #include "Student.hpp"
 
-std::string
-Student::getName() const noexcept
+std::string Student::getName() const noexcept
 {
-  return name_;
+    return name_;
 }
-std::string
-Student::getSurname() const noexcept
+std::string Student::getSurname() const noexcept
 {
-  return surname_;
+    return surname_;
 }
-std::string
-Student::getAddress() const noexcept
+std::string Student::getAddress() const noexcept
 {
-  return adress_;
+    return adress_;
 }
-Position
-Student::getPosition() const noexcept
+Position Student::getPosition() const noexcept
 {
-  return position_;
+    return position_;
 }
-int
-Student::getIndex() const noexcept
+int Student::getIndex() const noexcept
 {
-  return index_;
+    return index_;
 }
-float
-Student::getSalary() const noexcept
+float Student::getSalary() const noexcept
 {
-  return 0;
+    return 0;
 }
-std::string
-Student::getPESEL() const noexcept
+std::string Student::getPESEL() const noexcept
 {
-  return PESEL_;
+    return PESEL_;
 }
-Sex
-Student::getSex() const noexcept
+Sex Student::getSex() const noexcept
 {
-  return sex_;
+    return sex_;
 }
 
-void
-Student::setSalary(const float&) noexcept
+void Student::setSalary(const float &) noexcept
 {
 }
