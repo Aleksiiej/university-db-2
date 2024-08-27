@@ -1,6 +1,5 @@
 #include "Employee.hpp"
 
-// getters
 std::string Employee::getName() const noexcept
 {
     return name_;
@@ -34,7 +33,6 @@ Sex Employee::getSex() const noexcept
     return sex_;
 }
 
-// setters
 void Employee::setSalary(const float &salary) noexcept
 {
     salary_ = salary;

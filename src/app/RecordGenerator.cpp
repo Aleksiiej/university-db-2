@@ -1,7 +1,5 @@
 #include "RecordGenerator.hpp"
 
-#include <iostream>
-
 std::unique_ptr<Person> RecordGenerator::generateRandomRecord() const noexcept
 {
     std::random_device rd;
@@ -52,7 +50,6 @@ std::string RecordGenerator::generateRandomMaleName() const noexcept
     std::ifstream file("../src/content/maleNames.json");
     if (!file)
     {
-        std::cout << "File was not opened properly \n Program will be closed" << std::endl;
         exit(0);
     }
     nlohmann::json data;
@@ -68,7 +65,6 @@ std::string RecordGenerator::generateRandomFemaleName() const noexcept
     std::ifstream file("../src/content/femaleNames.json");
     if (!file)
     {
-        std::cout << "File was not opened properly \n Program will be closed" << std::endl;
         exit(0);
     }
     nlohmann::json data;
@@ -84,7 +80,6 @@ std::string RecordGenerator::generateRandomMaleSurname() const noexcept
     std::ifstream file("../src/content/maleSurnames.json");
     if (!file)
     {
-        std::cout << "File was not opened properly \n Program will be closed" << std::endl;
         exit(0);
     }
     nlohmann::json data;
@@ -100,7 +95,6 @@ std::string RecordGenerator::generateRandomFemaleSurname() const noexcept
     std::ifstream file("../src/content/femaleSurnames.json");
     if (!file)
     {
-        std::cout << "File was not opened properly \n Program will be closed" << std::endl;
         exit(0);
     }
     nlohmann::json data;
@@ -116,7 +110,6 @@ std::string RecordGenerator::generateRandomAdress() const noexcept
     std::ifstream file("../src/content/adresses.json");
     if (!file)
     {
-        std::cout << "File was not opened properly \n Program will be closed" << std::endl;
         exit(0);
     }
     nlohmann::json data;

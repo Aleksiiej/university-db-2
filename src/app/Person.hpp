@@ -3,7 +3,6 @@
 #include <string>
 
 enum class Sex { male, female };
-
 enum class Position { Student, Employee };
 
 class Person {
@@ -16,7 +15,6 @@ public:
 
   virtual ~Person() = default;
 
-  // getters
   virtual std::string getName() const noexcept;
   virtual std::string getSurname() const noexcept;
   virtual std::string getAddress() const noexcept;
@@ -26,7 +24,6 @@ public:
   virtual std::string getPESEL() const noexcept;
   virtual Sex getSex() const noexcept;
 
-  // setters
   virtual void setSalary(const float &salary) noexcept;
 
   std::map<Sex, std::string> sexPrint{{Sex::male, "male"},
