@@ -11,10 +11,6 @@
 #include "modifysalaryinemployeerecordform.h"
 #include "recordgeneratorform.h"
 #include "removestudentrecordbyindexform.h"
-#include "showallform.h"
-#include "sortemployeesrecordsbysalaryform.h"
-#include "sortrecordsbypeselform.h"
-#include "sortrecordsbysurnameform.h"
 #include "validatepeselform.h"
 
 QT_BEGIN_NAMESPACE
@@ -32,6 +28,7 @@ class MainWindow : public QMainWindow
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    void showAllRecords();
     std::shared_ptr<Database>& getPtrToDatabase();
 
   private slots:
@@ -54,12 +51,8 @@ class MainWindow : public QMainWindow
     std::unique_ptr<Ui::MainWindow> ui;
     std::shared_ptr<Database> ptrToDatabase_;
     std::unique_ptr<AddRecordForm> ptrToAddRecordForm_;
-    std::unique_ptr<ShowAllForm> ptrToShowAllForm_;
     std::unique_ptr<FindRecordByPeselForm> ptrToFindRecordByPeselForm_;
     std::unique_ptr<FindRecordBySurnameForm> ptrToFindRecordBySurnameForm_;
-    std::unique_ptr<SortEmployeesRecordsBySalaryForm> ptrToSortEmployeedRecordsBySalaryForm_;
-    std::unique_ptr<SortRecordsByPeselForm> ptrToSortRecordsByPeselForm_;
-    std::unique_ptr<SortRecordsBySurnameForm> ptrToSortRecordsBySurnameForm_;
     std::unique_ptr<RemoveStudentRecordByIndexForm> ptrToRemoveStudentRecordByIndexForm_;
     std::unique_ptr<ModifySalaryInEmployeeRecordForm> ptrToModifySalaryInEmployeeRecordForm_;
     std::unique_ptr<ValidatePeselForm> ptrToValidatePeselForm_;

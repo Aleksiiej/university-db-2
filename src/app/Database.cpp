@@ -159,6 +159,7 @@ bool Database::validatePESEL(const std::string &PESEL) const noexcept
 
 void Database::loadToJson() noexcept
 {
+    database_.clear();
     nlohmann::json data;
     std::ifstream inputFile("database.json");
     inputFile >> data;

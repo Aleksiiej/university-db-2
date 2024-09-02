@@ -29,6 +29,7 @@ void RemoveStudentRecordByIndexForm::on_pushButton_2_clicked()
     {
         ptrToMainWindow_->getPtrToDatabase()->removeByIndex(index);
         ui->label->setText("Record removed");
+        ptrToMainWindow_->showAllRecords();
     }
     else
     {

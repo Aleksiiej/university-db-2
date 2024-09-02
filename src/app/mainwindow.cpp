@@ -11,6 +11,11 @@ MainWindow::~MainWindow()
 {
 }
 
+void MainWindow::showAllRecords()
+{
+    ui->label->setText(QString::fromStdString(ptrToDatabase_->returnRecordsAsString()));
+}
+
 std::shared_ptr<Database>& MainWindow::getPtrToDatabase()
 {
     return ptrToDatabase_;
@@ -25,9 +30,7 @@ void MainWindow::on_pushButton_clicked()
 
 void MainWindow::on_pushButton_2_clicked()
 {
-    ptrToShowAllForm_ = std::make_unique<ShowAllForm>(this);
-    ptrToShowAllForm_->setPtrToMainWindow(this);
-    ptrToShowAllForm_->show();
+    showAllRecords();
 }
 
 void MainWindow::on_pushButton_3_clicked()
@@ -46,25 +49,19 @@ void MainWindow::on_pushButton_4_clicked()
 
 void MainWindow::on_pushButton_5_clicked()
 {
-    ptrToSortRecordsBySurnameForm_ = std::make_unique<SortRecordsBySurnameForm>();
     ptrToDatabase_->sortBySurname();
-    ptrToSortRecordsBySurnameForm_->show();
+    showAllRecords();
 }
 
 void MainWindow::on_pushButton_6_clicked()
 {
-    ptrToSortRecordsByPeselForm_ = std::make_unique<SortRecordsByPeselForm>();
     ptrToDatabase_->sortByPESEL();
-    ptrToSortRecordsByPeselForm_->show();
+    showAllRecords();
 }
 
 void MainWindow::on_pushButton_7_clicked()
 {
-    ptrToSortEmployeedRecordsBySalaryForm_ = std::make_unique<SortEmployeesRecordsBySalaryForm>();
-    ptrToSortEmployeedRecordsBySalaryForm_->setPtrToMainWindow(this);
-    ptrToSortEmployeedRecordsBySalaryForm_->appendTextToLabel(
-        QString::fromStdString(ptrToDatabase_->returnEmployeesSortedBySalary()));
-    ptrToSortEmployeedRecordsBySalaryForm_->show();
+    ui->label->setText(QString::fromStdString(ptrToDatabase_->returnEmployeesSortedBySalary()));
 }
 
 void MainWindow::on_pushButton_8_clicked()
@@ -93,6 +90,7 @@ void MainWindow::on_pushButton_11_clicked()
     ptrToInformationForm_ = std::make_unique<InformationForm>();
     ptrToInformationForm_->setLoadSuccesText();
     ptrToInformationForm_->show();
+    showAllRecords();
 }
 
 void MainWindow::on_pushButton_12_clicked()

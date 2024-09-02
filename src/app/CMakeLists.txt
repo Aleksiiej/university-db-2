@@ -21,17 +21,9 @@ qt_add_executable(${PROJECT_NAME} main.cpp
                                   informationform.h informationform.cpp informationform.ui
                                   findrecordbysurnameform.h findrecordbysurnameform.cpp findrecordbysurnameform.ui
                                   findrecordbypeselform.h findrecordbypeselform.cpp findrecordbypeselform.ui
-                                  sortrecordsbysurnameform.h sortrecordsbysurnameform.cpp sortrecordsbysurnameform.ui
-                                  sortrecordsbypeselform.h sortrecordsbypeselform.cpp sortrecordsbypeselform.ui
-                                  sortemployeesrecordsbysalaryform.h sortemployeesrecordsbysalaryform.cpp sortemployeesrecordsbysalaryform.ui
                                   removestudentrecordbyindexform.h removestudentrecordbyindexform.cpp removestudentrecordbyindexform.ui
                                   modifysalaryinemployeerecordform.h modifysalaryinemployeerecordform.cpp modifysalaryinemployeerecordform.ui
                                   validatepeselform.h validatepeselform.cpp validatepeselform.ui
-
-
-
-
-
                               )
 
 target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Widgets)

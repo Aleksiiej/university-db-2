@@ -28,6 +28,7 @@ void RecordGeneratorForm::on_generate_records_pushButton_clicked()
         ptrToInformationForm_ = std::make_unique<InformationForm>();
         ptrToInformationForm_->setRecordCreationSuccesText();
         ptrToInformationForm_->show();
+        ptrToMainWindow_->showAllRecords();
     }
     else
     {

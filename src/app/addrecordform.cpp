@@ -62,6 +62,7 @@ void AddRecordForm::on_pushButton_addrecord_clicked()
                                                           address.toStdString(), studentEmployeeValue.toFloat(),
                                                           pesel.toStdString(), sex, position);
     }
+    ptrToMainWindow_->showAllRecords();
 }
 
 void AddRecordForm::on_pushButton_close_clicked()
