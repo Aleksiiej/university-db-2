@@ -1,5 +1,5 @@
-#include "mainwindow.h"
 #include "removestudentrecordbyindexform.h"
+#include "mainwindow.h"
 #include "ui_removestudentrecordbyindexform.h"
 
 RemoveStudentRecordByIndexForm::RemoveStudentRecordByIndexForm(QWidget *parent)

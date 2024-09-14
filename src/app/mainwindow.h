@@ -3,8 +3,8 @@
 
 #include <QMainWindow>
 
-#include "addrecordform.h"
 #include "Database.hpp"
+#include "addrecordform.h"
 #include "findrecordbypeselform.h"
 #include "findrecordbysurnameform.h"
 #include "informationform.h"
@@ -29,7 +29,7 @@ class MainWindow : public QMainWindow
     ~MainWindow();
 
     void showAllRecords();
-    std::shared_ptr<Database>& getPtrToDatabase();
+    std::shared_ptr<Database> &getPtrToDatabase();
 
   private slots:
     void on_pushButton_clicked();

@@ -1,5 +1,5 @@
-#include "mainwindow.h"
 #include "showallform.h"
+#include "mainwindow.h"
 #include "ui_showallform.h"
 
 ShowAllForm::ShowAllForm(QWidget *parent) : QDialog(parent), ui(std::make_unique<Ui::ShowAllForm>())

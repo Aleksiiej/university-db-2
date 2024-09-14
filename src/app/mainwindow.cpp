@@ -16,7 +16,7 @@ void MainWindow::showAllRecords()
     ui->label->setText(QString::fromStdString(ptrToDatabase_->returnRecordsAsString()));
 }
 
-std::shared_ptr<Database>& MainWindow::getPtrToDatabase()
+std::shared_ptr<Database> &MainWindow::getPtrToDatabase()
 {
     return ptrToDatabase_;
 }

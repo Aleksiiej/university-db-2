@@ -1,6 +1,6 @@
+#include "recordgeneratorform.h"
 #include "QIntValidator"
 #include "mainwindow.h"
-#include "recordgeneratorform.h"
 #include "ui_recordgeneratorform.h"
 
 RecordGeneratorForm::RecordGeneratorForm(QWidget *parent) : QDialog(parent), ui(new Ui::RecordGeneratorForm)

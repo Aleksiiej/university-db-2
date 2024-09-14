@@ -1,9 +1,10 @@
+#include "validatepeselform.h"
 #include "mainwindow.h"
 #include "ui_validatepeselform.h"
-#include "validatepeselform.h"
 
 ValidatePeselForm::ValidatePeselForm(QWidget *parent)
-    : QDialog(parent), ui(std::make_unique<Ui::ValidatePeselForm>()), PESELValidatorPtr_(std::make_unique<PESELValidator>())
+    : QDialog(parent), ui(std::make_unique<Ui::ValidatePeselForm>()),
+      PESELValidatorPtr_(std::make_unique<PESELValidator>())
 {
     ui->setupUi(this);
 }

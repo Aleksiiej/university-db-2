@@ -67,8 +67,8 @@ std::vector<std::shared_ptr<Person>> Database::findBySurname(const std::string &
 
 std::shared_ptr<Person> Database::findByPESEL(const std::string &PESEL) const noexcept
 {
-    auto tempIter =
-        std::find_if(begin(database_), end(database_), [&PESEL](const auto& record) { return record->getPESEL() == PESEL; });
+    auto tempIter = std::find_if(begin(database_), end(database_),
+                                 [&PESEL](const auto &record) { return record->getPESEL() == PESEL; });
     if (tempIter != end(database_))
     {
         return *(tempIter);
@@ -82,17 +82,19 @@ std::shared_ptr<Person> Database::findByPESEL(const std::string &PESEL) const no
 void Database::sortBySurname() noexcept
 {
     std::sort(begin(database_), end(database_),
-              [](const auto& lhs, const auto& rhs) { return lhs->getSurname() < rhs->getSurname(); });
+              [](const auto &lhs, const auto &rhs) { return lhs->getSurname() < rhs->getSurname(); });
 }
 
 void Database::sortByPESEL() noexcept
 {
-    std::sort(begin(database_), end(database_), [](const auto& lhs, const auto& rhs) { return lhs->getPESEL() < rhs->getPESEL(); });
+    std::sort(begin(database_), end(database_),
+              [](const auto &lhs, const auto &rhs) { return lhs->getPESEL() < rhs->getPESEL(); });
 }
 
 void Database::sortBySalary() noexcept
 {
-    std::sort(begin(database_), end(database_), [](const auto& lhs, const auto& rhs) { return lhs->getSalary() < rhs->getSalary(); });
+    std::sort(begin(database_), end(database_),
+              [](const auto &lhs, const auto &rhs) { return lhs->getSalary() < rhs->getSalary(); });
 }
 
 std::string Database::returnEmployeesSortedBySalary()
@@ -105,7 +107,8 @@ std::string Database::returnEmployeesSortedBySalary()
             ret.push_back(record);
         }
     }
-    std::sort(begin(ret), end(ret), [](const auto& lhs, const auto& rhs) { return lhs->getSalary() < rhs->getSalary(); });
+    std::sort(begin(ret), end(ret),
+              [](const auto &lhs, const auto &rhs) { return lhs->getSalary() < rhs->getSalary(); });
     std::stringstream sstream;
     for (const auto &record : ret)
     {
@@ -132,8 +135,8 @@ bool Database::removeByIndex(const int &index) noexcept
     {
         return false;
     }
-    database_.erase(
-        std::find_if(begin(database_), end(database_), [&](const auto& record) { return record->getIndex() == index; }));
+    database_.erase(std::find_if(begin(database_), end(database_),
+                                 [&](const auto &record) { return record->getIndex() == index; }));
     return true;
 }
 
@@ -212,7 +215,7 @@ std::shared_ptr<Person> Database::getPtrToRecord(const int &pos) const noexcept
     return database_.at(pos);
 }
 
-void Database::putRecordInSstream(std::stringstream& sstream, const std::shared_ptr<Person>& record) const noexcept
+void Database::putRecordInSstream(std::stringstream &sstream, const std::shared_ptr<Person> &record) const noexcept
 {
     sstream << "Name: " << record->getName() << std::endl;
     sstream << "Surname: " << record->getSurname() << std::endl;

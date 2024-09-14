@@ -2,7 +2,8 @@
 #include "mainwindow.h"
 #include "ui_findrecordbypeselform.h"
 
-FindRecordByPeselForm::FindRecordByPeselForm(QWidget *parent) : QDialog(parent), ui(std::make_unique<Ui::FindRecordByPeselForm>())
+FindRecordByPeselForm::FindRecordByPeselForm(QWidget *parent)
+    : QDialog(parent), ui(std::make_unique<Ui::FindRecordByPeselForm>())
 {
     ui->setupUi(this);
 }
@@ -35,7 +36,7 @@ void FindRecordByPeselForm::on_pushButton_2_clicked()
     std::string record = ptrToMainWindow_->getPtrToDatabase()->returnRecordWithGivenPesel(pesel.toStdString());
     if (record.empty())
     {
-        appendTextToLabel("no records found with the given surname");
+        appendTextToLabel("no records found with the given PESEL");
     }
     appendTextToLabel(QString::fromStdString(record));
 }
